@@ -19,9 +19,10 @@ router.post('/signup', async (req, res) => {
     const sessionUser = JSON.parse(JSON.stringify(newUser));
     delete sessionUser.password;
     req.session.user = sessionUser;
-    res.json(sessionUser);
+    return res.json(sessionUser);
   } catch (err) {
     console.log(err);
+    return res.sendStatus(400);
   }
 });
 
@@ -38,9 +39,10 @@ router.post('/login', async (req, res) => {
       req.session.user = sessionUser;
       return res.json(sessionUser);
     }
-    res.status(400).json({ message: 'Неправильный пароль' });
+    return res.status(400).json({ message: 'Неправильный пароль' });
   } catch (err) {
     console.log(err);
+    return res.sendStatus(400);
   }
 });
 

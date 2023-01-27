@@ -10,6 +10,9 @@ import {
 } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { logoutUser } from '../../../redux/actions/userAction';
+import Attention from '../../UI/Attention/Attention';
+import Head from '../../UI/Head/Head';
+import Navigation from '../../UI/Navigation/Navigation';
 
 function NavBar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -27,15 +30,20 @@ function NavBar() {
           <Container>
             {user?.id
               ? (
-                <Link
-                  to="/logout"
-                  onClick={(e) => {
-                    dispatch(logoutUser(e));
-                    navigate('/');
-                  }}
-                >
-                  Выйти
-                </Link>
+                <>
+                  <Link
+                    to="/logout"
+                    onClick={(e) => {
+                      dispatch(logoutUser(e));
+                      navigate('/');
+                    }}
+                  >
+                    Выйти
+                  </Link>
+                  <Attention />
+                  <Head />
+                  <Navigation />
+                </>
               )
               : (
                 <>
@@ -49,5 +57,3 @@ function NavBar() {
     </div>
   );
 }
-
-export default NavBar;

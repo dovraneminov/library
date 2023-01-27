@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './head.css';
+import { BsBoxArrowInRight } from 'react-icons/bs';
 
 export default function Head() {
   return (
@@ -12,6 +13,8 @@ export default function Head() {
           <button className="btn btn-outline-success border border-2  border-dark text-dark" type="submit">Search</button>
         </form>
         <button className="btn btn-outline-success text-dark border border-0" type="button">
+          <BsBoxArrowInRight style={{ width: '30px', height: '28px' }} />
+          {' '}
           Войти
         </button>
       </div>

@@ -7,6 +7,9 @@ import Author from './components/Pages/Author/Author';
 import Basket from './components/Pages/Basket/Basket';
 import ClientsPage from './components/Pages/ClientsPage/ClientsPage';
 import Mybook from './components/Pages/Mybook/Mybook';
+import Books from './components/Pages/Books/Books';
+import InfoCard from './components/UI/InfoCard/InfoCard';
+import AuthorCard from './components/UI/AuthorCard/AuthorCard';
 
 function App() {
   return (
@@ -21,6 +24,9 @@ function App() {
         <Route path="/basket" element={<Basket />} />
         <Route path="/client" element={<ClientsPage />} />
         <Route path="/mybook" element={<Mybook />} />
+        <Route path="/books" element={<Books />} />
+        <Route path="/books/info/:id" element={<InfoCard />} />
+        <Route path="/author/:id" element={<AuthorCard />} />
       </Routes>
     </>
 

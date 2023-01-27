@@ -1,41 +1,38 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import {
-  Button, Form, Col, Input, Label, Row, Modal,
+  Button, Form, Col, Input, Label, Modal, ModalHeader, ModalBody,
 } from 'reactstrap';
 import { useNavigate } from 'react-router-dom';
 import { AuthLogin } from '../../../redux/actions/userAction';
 
-export default function AuthPage() {
+export default function AuthPage(args) {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const [isModal, setModal] = React.useState(false);
+  const [modal, setModal] = useState(false);
+  const toggle = () => setModal(!modal);
+  useEffect(() => {
+    setModal(!modal);
+  }, []);
   return (
-    <>
-      <button type="button" onClick={() => setModal(true)}>Click Here</button>
-      <Modal
-        isVisible={isModal}
-        title="Modal Title"
-        content={<p>Add your content here</p>}
-        footer={<button type="button">Cancel</button>}
-        onClose={() => setModal(false)}
-      />
-      <Row>
-        <Form onSubmit={(e) => {
-          dispatch(AuthLogin(e));
-          navigate('/');
-        }}
-        >
-          <Row className="row-cols-lg-auto g-3 align-items-center">
+    <div>
+      <Modal isOpen={modal} toggle={toggle} {...args}>
+        <ModalHeader toggle={toggle}>Registration</ModalHeader>
+        <ModalBody>
+          <Form onSubmit={(e) => {
+            dispatch(AuthLogin(e));
+            navigate('/');
+          }}
+          >
             <Col>
               <Label
                 className="visually-hidden"
-                for="exampleEmail2"
+                for="exampleEmail3"
               >
                 Name
               </Label>
               <Input
-                id="exampleEmail2"
+                id="exampleEmail3"
                 name="name"
                 placeholder="username"
                 type="text"
@@ -58,15 +55,29 @@ export default function AuthPage() {
             <Col>
               <Label
                 className="visually-hidden"
-                for="examplePassword"
+                for="exampleEmail4"
+              >
+                Phone
+              </Label>
+              <Input
+                id="examplePhone4"
+                name="phone"
+                placeholder="phone"
+                type="text"
+              />
+            </Col>
+            <Col>
+              <Label
+                className="visually-hidden"
+                for="examplePassword5"
               >
                 Password
               </Label>
               <Input
-                id="examplePassword"
+                id="examplePassword5"
                 name="password"
-                placeholder="123"
-                type="text"
+                placeholder="password"
+                type="password"
               />
             </Col>
             <Col>
@@ -74,9 +85,9 @@ export default function AuthPage() {
                 Submit
               </Button>
             </Col>
-          </Row>
-        </Form>
-      </Row>
-    </>
+          </Form>
+        </ModalBody>
+      </Modal>
+    </div>
   );
 }

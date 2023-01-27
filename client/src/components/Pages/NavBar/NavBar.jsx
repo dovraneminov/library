@@ -1,75 +1,53 @@
-import React from 'react';
-import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
-import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
-import { NavLink, useNavigate } from 'react-router-dom';
+import React, { useState } from 'react';
+import {
+  Collapse,
+  Navbar,
+  NavbarToggler,
+  Container,
+} from 'reactstrap';
+import {
+  Link, useNavigate,
+} from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { logoutUser } from '../../../redux/actions/userAction';
 
-const linkStyle = {
-  textDecoration: 'none',
-  color: 'white',
-  fontSize: 18,
-};
+function NavBar() {
+  const [isOpen, setIsOpen] = useState(false);
 
-export default function Navbar() {
-  const user = useSelector((state) => state.user);
+  const toggle = () => setIsOpen(!isOpen);
   const dispatch = useDispatch();
   const navigate = useNavigate();
-
+  const user = useSelector((state) => state.user);
   return (
-    <Box sx={{
-      flexGrow: 1,
-    }}
-    >
-      <AppBar
-        position="static"
-        sx={{
-          flexGrow: 1,
-          background: 'linear-gradient(0deg, rgba(89,89,89,1) 0%, rgba(0,0,0,1) 100%)',
-        }}
-      >
-        <Toolbar>
-
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            <NavLink to="/" style={linkStyle}>Главная страница</NavLink>
-          </Typography>
-          {user?.id
-            ? (
-              <>
-                <Typography variant="h6" component="div" mr={5}>
-                  <NavLink to="/profile" style={linkStyle}>Личный кабинет</NavLink>
-                </Typography>
-                <Typography variant="h6" component="div">
-                  <NavLink
-                    to="/logout"
-                    onClick={(e) => {
-                      dispatch(logoutUser(e));
-                      navigate('/');
-                    }}
-                    style={linkStyle}
-                  >
-                    Выйти
-
-                  </NavLink>
-                </Typography>
-              </>
-            )
-            : (
-              <>
-                <Typography variant="h6" component="div" mr={5}>
-                  <NavLink to="/signup" style={linkStyle}>Регистрация</NavLink>
-                </Typography>
-                <Typography variant="h6" component="div">
-                  <NavLink to="/login" style={linkStyle}>Авторизация</NavLink>
-                </Typography>
-              </>
-            )}
-
-        </Toolbar>
-      </AppBar>
-    </Box>
-
+    <div>
+      <Navbar>
+        <Link to="/">Books</Link>
+        <NavbarToggler onClick={toggle} />
+        <Collapse isOpen={isOpen}>
+          <Container>
+            {user?.id
+              ? (
+                <Link
+                  to="/logout"
+                  onClick={(e) => {
+                    dispatch(logoutUser(e));
+                    navigate('/');
+                  }}
+                >
+                  Выйти
+                </Link>
+              )
+              : (
+                <>
+                  <Link to="/signup">Регистрация</Link>
+                  <Link to="/login">Авторизация</Link>
+                </>
+              )}
+          </Container>
+        </Collapse>
+      </Navbar>
+    </div>
   );
 }
+
+export default NavBar;

@@ -10,6 +10,7 @@ import Mybook from './components/Pages/Mybook/Mybook';
 import Books from './components/Pages/Books/Books';
 import InfoCard from './components/UI/InfoCard/InfoCard';
 import AuthorCard from './components/UI/AuthorCard/AuthorCard';
+import MainPage from './components/Pages/Mainpage/Mainpage';
 
 function App() {
   return (
@@ -17,7 +18,7 @@ function App() {
       <NavBar />
       <Routes>
         <Route path="/" element={(<Navigate to="/main" />)} />
-        {/* <Route path="/main" element={<MainPage />} /> */}
+        <Route path="/main" element={<MainPage />} />
         <Route path="/genre" element={<Genres />} />
         <Route path="/popular" element={<Popular />} />
         <Route path="/author" element={<Author />} />

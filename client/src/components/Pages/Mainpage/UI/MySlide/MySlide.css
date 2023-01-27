@@ -1,0 +1,8 @@
+.img{
+    display: grid;
+    justify-content: space-around;
+    border: 100px 'solid' #000;
+    border-radius: 10% / 50%;
+    box-shadow: 20px solid;
+}
+

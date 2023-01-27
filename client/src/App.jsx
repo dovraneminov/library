@@ -7,6 +7,7 @@ import Author from './components/Pages/Author/Author';
 import Basket from './components/Pages/Basket/Basket';
 import ClientsPage from './components/Pages/ClientsPage/ClientsPage';
 import Mybook from './components/Pages/Mybook/Mybook';
+import MainPage from './components/Pages/Mainpage/Mainpage';
 
 function App() {
   return (
@@ -14,7 +15,7 @@ function App() {
       <NavBar />
       <Routes>
         <Route path="/" element={(<Navigate to="/main" />)} />
-        {/* <Route path="/main" element={<MainPage />} /> */}
+        <Route path="/main" element={<MainPage />} />
         <Route path="/genre" element={<Genres />} />
         <Route path="/popular" element={<Popular />} />
         <Route path="/author" element={<Author />} />

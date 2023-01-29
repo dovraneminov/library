@@ -4,7 +4,7 @@ const cors = require('cors');
 const session = require('express-session');
 const store = require('session-file-store');
 const authRouter = require('./routes/authRouter');
-
+const mainRouter = require('./routes/mainRouter');
 require('dotenv').config();
 
 const PORT = process.env.SERVER_PORT || 3001;
@@ -33,5 +33,6 @@ app.use(cors({
 }));
 
 app.use('/auth', authRouter);
+app.use('/main', mainRouter);
 
 app.listen(PORT, () => console.log(`App has started on port ${PORT}`));

@@ -3,7 +3,7 @@ import {
   Card, CardBody, CardLink, CardSubtitle, CardText, CardTitle,
 } from 'reactstrap';
 
-export default function MyGenres() {
+export default function MyLoveBook() {
   return (
     <Card
       style={{

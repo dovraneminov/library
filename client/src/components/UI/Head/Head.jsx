@@ -2,10 +2,10 @@ import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
 import { Button } from 'reactstrap';
+import { BsBoxArrowInRight } from 'react-icons/bs';
 import { logoutUser } from '../../../redux/actions/userAction';
 import AuthPage from '../../Pages/AuthPage';
 import './head.css';
-import { BsBoxArrowInRight } from 'react-icons/bs';
 
 export default function Head() {
   const [modal, setModal] = useState(false);
@@ -42,10 +42,10 @@ export default function Head() {
           )
           : (
             <Button onClick={toggle} className="btn btn-outline-success text-dark border border-0" type="button">
-               <BsBoxArrowInRight style={{ width: '30px', height: '28px' }} />
-          {' '}
-          Войти
-          </Button>
+              <BsBoxArrowInRight style={{ width: '30px', height: '28px' }} />
+              {' '}
+              Войти
+            </Button>
           )}
       </div>
       <AuthPage modal={modal} toggle={toggle} setModal={setModal} />

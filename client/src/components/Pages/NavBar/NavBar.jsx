@@ -11,49 +11,42 @@ import {
 import { useDispatch, useSelector } from 'react-redux';
 import { logoutUser } from '../../../redux/actions/userAction';
 import Attention from '../../UI/Attention/Attention';
-import Head from '../../UI/Head/Head';
 import Navigation from '../../UI/Navigation/Navigation';
+import Head from '../../UI/Head/Head';
 
 function NavBar() {
-  const [isOpen, setIsOpen] = useState(false);
+  // const [isOpen, setIsOpen] = useState(false);
 
-  const toggle = () => setIsOpen(!isOpen);
-  const dispatch = useDispatch();
-  const navigate = useNavigate();
-  const user = useSelector((state) => state.user);
+  // const toggle = () => setIsOpen(!isOpen);
+  // const dispatch = useDispatch();
+  // const navigate = useNavigate();
+  // const user = useSelector((state) => state.user);
   return (
     <div>
-      <Navbar>
-        <Link to="/">Books</Link>
-        <NavbarToggler onClick={toggle} />
-        <Collapse isOpen={isOpen}>
-          <Container>
-            {user?.id
-              ? (
-                <>
-                  <Link
-                    to="/logout"
-                    onClick={(e) => {
-                      dispatch(logoutUser(e));
-                      navigate('/');
-                    }}
-                  >
-                    Выйти
-                  </Link>
-                  <Attention />
-                  <Head />
-                  <Navigation />
-                </>
-              )
-              : (
-                <>
-                  <Link to="/signup">Регистрация</Link>
-                  <Link to="/login">Авторизация</Link>
-                </>
-              )}
-          </Container>
-        </Collapse>
-      </Navbar>
+      <Attention />
+      <Head />
+      <Navigation />
+      {/* {user?.id
+        ? (
+          <Link
+            to="/logout"
+            onClick={(e) => {
+              dispatch(logoutUser(e));
+              navigate('/');
+            }}
+          >
+            Выйти
+          </Link>
+        )
+        : (
+          <>
+            <Link to="/signup">Регистрация</Link>
+            <Link to="/login">Авторизация</Link>
+          </>
+        )} */}
+
     </div>
   );
 }
+
+export default NavBar;

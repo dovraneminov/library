@@ -1,15 +1,4 @@
-import React, { useState } from 'react';
-import {
-  Collapse,
-  Navbar,
-  NavbarToggler,
-  Container,
-} from 'reactstrap';
-import {
-  Link, useNavigate,
-} from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
-import { logoutUser } from '../../../redux/actions/userAction';
+import React from 'react';
 import Attention from '../../UI/Attention/Attention';
 import Navigation from '../../UI/Navigation/Navigation';
 import Head from '../../UI/Head/Head';

@@ -11,6 +11,9 @@ import Author from './components/Pages/Author/Author';
 import Basket from './components/Pages/Basket/Basket';
 import ClientsPage from './components/Pages/ClientsPage/ClientsPage';
 import Mybook from './components/Pages/Mybook/Mybook';
+import Books from './components/Pages/Books/Books';
+import InfoCard from './components/UI/InfoCard/InfoCard';
+import AuthorCard from './components/UI/AuthorCard/AuthorCard';
 import MainPage from './components/Pages/Mainpage/Mainpage';
 import Entry from './components/Pages/Entry';
 
@@ -34,6 +37,9 @@ function App() {
         <Route path="/signup" element={<AuthPage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/entry" element={<Entry />} />
+        <Route path="/books" element={<Books />} />
+        <Route path="/books/info/:id" element={<InfoCard />} />
+        <Route path="/author/:id" element={<AuthorCard />} />
       </Routes>
     </>
 

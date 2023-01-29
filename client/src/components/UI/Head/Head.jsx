@@ -5,6 +5,7 @@ import { Button } from 'reactstrap';
 import { logoutUser } from '../../../redux/actions/userAction';
 import AuthPage from '../../Pages/AuthPage';
 import './head.css';
+import { BsBoxArrowInRight } from 'react-icons/bs';
 
 export default function Head() {
   const [modal, setModal] = useState(false);
@@ -40,7 +41,11 @@ export default function Head() {
             </Link>
           )
           : (
-            <Button onClick={toggle} className="btn btn-outline-success text-dark border border-0" type="button">Войти</Button>
+            <Button onClick={toggle} className="btn btn-outline-success text-dark border border-0" type="button">
+               <BsBoxArrowInRight style={{ width: '30px', height: '28px' }} />
+          {' '}
+          Войти
+          </Button>
           )}
       </div>
       <AuthPage modal={modal} toggle={toggle} setModal={setModal} />

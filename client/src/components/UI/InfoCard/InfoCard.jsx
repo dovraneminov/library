@@ -10,32 +10,32 @@ export default function InfoCard() {
 
   function openAuthor() {
     dispatch(setAuthor(info));
-    navigate(`/author/${info.id}`);
+    navigate(`/author/${info?.id}`);
   }
 
   return (
     <div className="card" style={{ width: '18rem' }}>
-      <img src={info.photo} className="card-img-top" alt="..." />
+      <img src={info?.photo} className="card-img-top" alt="..." />
       <div className="card-body">
-        <h5 className="card-title">{info.title}</h5>
+        <h5 className="card-title">{info?.title}</h5>
         <h5>
           Жанр:
           {' '}
-          {info.Genre.genre}
+          {info?.Genre?.genre}
         </h5>
         <h6 className="card-subtitle mb-2 text-muted">
           Рейтинг:
           {' '}
-          {info.rating}
+          {info?.rating}
           /10
         </h6>
         <h6 className="card-subtitle mb-2 text-muted">
-          {info.description}
+          {info?.description}
         </h6>
         <h3>
           Автор:
           {' '}
-          {info.Author.name}
+          {info?.Author?.name}
         </h3>
         <button onClick={() => navigate(-1)} type="button" className="card-link">Вернуться назад</button>
         <button onClick={() => openAuthor()} type="button" className="card-link">Подробнее об авторе</button>

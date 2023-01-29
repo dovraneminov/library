@@ -13,7 +13,7 @@ const store = configureStore({
 
     persons: popularSlice,
     publisher: publisherSlice,
-    books: bookSlice,
+    myBooks: bookSlice,
     books: booksReducer,
     info: infoReducer,
     author: authorReducer,

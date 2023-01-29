@@ -6,7 +6,6 @@ const router = express.Router();
 
 router.post('/signup', async (req, res) => {
   const { name, email, password } = req.body;
-  console.log(req.body, '=======++++++++++==================');
   if (!name || !email || !password) return res.status(400).json({ message: 'Необходимо заполнить все поля' });
   const hash = await bcrypt.hash(password, 7);
 

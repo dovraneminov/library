@@ -1,20 +1,20 @@
 import { configureStore } from '@reduxjs/toolkit';
-import userReducer from './userSlice';
+
+import userReducer from './reducers/userReducer';
 import popularSlice from './popularSlice';
 import publisherSlice from './publisherSlice';
 import bookSlice from './bookSlice';
-import booksReducer from './reducers/booksReducer';
+// import booksReducer from './reducers/booksReducer';
 import infoReducer from './reducers/infoSlice';
 import authorReducer from './reducers/authorSlice';
 
 const store = configureStore({
   reducer: {
-    users: userReducer,
 
+    user: userReducer,
     persons: popularSlice,
     publisher: publisherSlice,
     books: bookSlice,
-    books: booksReducer,
     info: infoReducer,
     author: authorReducer,
   },

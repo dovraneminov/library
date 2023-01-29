@@ -25,8 +25,6 @@ const sessionConfig = {
     httpOnly: true,
   },
 };
-app.use(session(sessionConfig));
-
 app.use(morgan('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -34,6 +32,7 @@ app.use(cors({
   credentials: true,
   origin: true,
 }));
+app.use(session(sessionConfig));
 
 app.use('/auth', authRouter);
 app.use('/main', mainRouter);

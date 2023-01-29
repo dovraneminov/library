@@ -6,7 +6,7 @@
     background-attachment: fixed;
 }
 .content{
-    display: flex;
+    display: grid;
     justify-content: space-around;
     gap: 20px;
     flex-wrap: wrap;

@@ -5,15 +5,18 @@ const { User } = require('../db/models');
 const router = express.Router();
 
 router.post('/signup', async (req, res) => {
-  const { name, email, password } = req.body;
-  console.log(req.body, '=======++++++++++==================');
-  if (!name || !email || !password) return res.status(400).json({ message: 'Необходимо заполнить все поля' });
+  const {
+    name, email, phone, password,
+  } = req.body;
+  if (!name || !email || !phone || !password) return res.status(400).json({ message: 'Необходимо заполнить все поля' });
   const hash = await bcrypt.hash(password, 7);
 
   try {
     const [newUser, isExist] = await User.findOrCreate({
       where: { email },
-      defaults: { name, email, password: hash },
+      defaults: {
+        name, email, phone, password: hash,
+      },
     });
     if (!isExist) return res.status(401).json({ message: 'Пользователь уже существует' });
     const sessionUser = JSON.parse(JSON.stringify(newUser));

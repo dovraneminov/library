@@ -14,8 +14,7 @@ router.get('/publisher', async (req, res) => {
 });
 
 router.get('/getbooks', async (req, res) => {
-  const popular = await Book.findAll();
-  console.log('helo');
-  res.json(popular);
+  const books = await Book.findAll();
+  res.json(books);
 });
 module.exports = router;

@@ -1,9 +1,9 @@
 import React from 'react';
 import {
-  Card, CardBody, CardLink, CardSubtitle, CardText, CardTitle,
+  Card, CardBody, CardLink, CardSubtitle, CardTitle,
 } from 'reactstrap';
 
-export default function MyPopular() {
+export default function MyPopular({ el }) {
   return (
     <Card
       style={{
@@ -12,7 +12,7 @@ export default function MyPopular() {
     >
       <CardBody>
         <CardTitle tag="h5">
-          Card title
+          {el.title}
         </CardTitle>
         <CardSubtitle
           className="mb-2 text-muted"
@@ -27,14 +27,8 @@ export default function MyPopular() {
         width="100%"
       />
       <CardBody>
-        <CardText>
-          Some
-        </CardText>
         <CardLink href="#">
           Card Link
-        </CardLink>
-        <CardLink href="#">
-          Another Link
         </CardLink>
       </CardBody>
     </Card>

@@ -14,6 +14,9 @@ const store = configureStore({
     user: userReducer,
     persons: popularSlice,
     publisher: publisherSlice,
+
+    myBooks: bookSlice,
+    bookses: booksesReducer,
     books: bookSlice,
     info: infoReducer,
     author: authorReducer,

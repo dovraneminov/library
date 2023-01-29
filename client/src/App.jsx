@@ -10,6 +10,7 @@ import Mybook from './components/Pages/Mybook/Mybook';
 import Books from './components/Pages/Books/Books';
 import InfoCard from './components/UI/InfoCard/InfoCard';
 import AuthorCard from './components/UI/AuthorCard/AuthorCard';
+import Order from './components/Pages/Order/Order';
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
         <Route path="/books" element={<Books />} />
         <Route path="/books/info/:id" element={<InfoCard />} />
         <Route path="/author/:id" element={<AuthorCard />} />
+        <Route path="/order" element={<Order />} />
       </Routes>
     </>
 

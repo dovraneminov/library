@@ -5,7 +5,8 @@ const session = require('express-session');
 const store = require('session-file-store');
 const authRouter = require('./routes/authRouter');
 const allBooksRouter = require('./routes/allBooksRouter');
-const authorRouter = require('./routes/authorRouter')
+const authorRouter = require('./routes/authorRouter');
+const orderRouter = require('./routes/orderRouter');
 
 require('dotenv').config();
 
@@ -36,6 +37,7 @@ app.use(cors({
 
 app.use('/auth', authRouter);
 app.use('/books', allBooksRouter);
-app.use('/author',authorRouter)
+app.use('/author', authorRouter);
+app.use('/order', orderRouter);
 
 app.listen(PORT, () => console.log(`App has started on port ${PORT}`));

@@ -8,6 +8,7 @@ module.exports = {
       rating: 8.6,
       authorId: 1,
       genreId: 3,
+      price: 99,
     },
     {
       title: 'Собака Баскервилей',
@@ -17,6 +18,7 @@ module.exports = {
       rating: 8.3,
       authorId: 4,
       genreId: 4,
+      price: 99,
     },
     {
       title: 'Убийство в "Восточном экспрессе"',
@@ -26,6 +28,7 @@ module.exports = {
       rating: 8.0,
       authorId: 2,
       genreId: 4,
+      price: 99,
     },
     {
       title: 'Ревизор',
@@ -35,6 +38,7 @@ module.exports = {
       rating: 9.0,
       authorId: 6,
       genreId: 7,
+      price: 99,
     },
     {
       title: 'Собачье сердце',
@@ -44,6 +48,7 @@ module.exports = {
       rating: 9.0,
       authorId: 5,
       genreId: 1,
+      price: 99,
     },
     {
       title: 'Оно',
@@ -53,6 +58,7 @@ module.exports = {
       rating: 8.2,
       authorId: 9,
       genreId: 5,
+      price: 99,
     },
     {
       title: 'Рассвет',
@@ -62,6 +68,7 @@ module.exports = {
       rating: 7.8,
       authorId: 7,
       genreId: 2,
+      price: 99,
     },
     {
       title: 'Вечера на хуторе близ Диканьки',
@@ -71,6 +78,7 @@ module.exports = {
       rating: 8.6,
       authorId: 6,
       genreId: 21,
+      price: 99,
     },
     {
       title: 'Побег из Шоушенка',
@@ -80,6 +88,7 @@ module.exports = {
       rating: 8.2,
       authorId: 9,
       genreId: 3,
+      price: 99,
     },
     {
       title: 'Афоризмы житейской мудрости',
@@ -89,6 +98,7 @@ module.exports = {
       rating: 9.0,
       authorId: 10,
       genreId: 10,
+      price: 99,
     },
     {
       title: 'Гопники',
@@ -98,6 +108,7 @@ module.exports = {
       rating: 7.0,
       authorId: 12,
       genreId: 17,
+      price: 99,
     },
     {
       title: 'Три медведя',
@@ -107,6 +118,7 @@ module.exports = {
       rating: 8.6,
       authorId: 11,
       genreId: 11,
+      price: 99,
     },
     {
       title: 'Много шума из ничего',
@@ -116,6 +128,7 @@ module.exports = {
       rating: 8.8,
       authorId: 16,
       genreId: 8,
+      price: 99,
     },
     {
       title: 'Демон',
@@ -125,6 +138,7 @@ module.exports = {
       rating: 9.0,
       authorId: 15,
       genreId: 8,
+      price: 99,
     },
     {
       title: 'Медный всадник',
@@ -134,6 +148,7 @@ module.exports = {
       rating: 8.0,
       authorId: 14,
       genreId: 8,
+      price: 99,
     },
     {
       title: 'Одиссея',
@@ -143,6 +158,7 @@ module.exports = {
       rating: 8.4,
       authorId: 13,
       genreId: 8,
+      price: 99,
     },
     {
       title: 'Тонкое искусство пофигизма',
@@ -152,6 +168,7 @@ module.exports = {
       rating: 7.6,
       authorId: 17,
       genreId: 14,
+      price: 99,
     },
     {
       title: 'Цветы для Элджернона',
@@ -161,6 +178,7 @@ module.exports = {
       rating: 8.2,
       authorId: 18,
       genreId: 1,
+      price: 99,
     },
     {
       title: 'Марсианин',
@@ -170,6 +188,7 @@ module.exports = {
       rating: 8.6,
       authorId: 20,
       genreId: 1,
+      price: 99,
     },
     {
       title: 'Метро 2033',
@@ -179,6 +198,7 @@ module.exports = {
       rating: 8.4,
       authorId: 19,
       genreId: 1,
+      price: 99,
     },
     {
       title: 'Сойка-пересмешница',
@@ -188,6 +208,7 @@ module.exports = {
       rating: 8.4,
       authorId: 21,
       genreId: 1,
+      price: 99,
     },
     {
       title: 'Бегущий по Лабиринту',
@@ -197,6 +218,7 @@ module.exports = {
       rating: 8.4,
       authorId: 22,
       genreId: 1,
+      price: 99,
     },
     {
       title: 'Голодные игры',
@@ -206,6 +228,7 @@ module.exports = {
       rating: 8.8,
       authorId: 21,
       genreId: 1,
+      price: 99,
     },
     {
       title: 'Зеленая миля',
@@ -215,6 +238,7 @@ module.exports = {
       rating: 9.0,
       authorId: 9,
       genreId: 5,
+      price: 99,
     },
     {
       title: 'Сияние',
@@ -224,6 +248,7 @@ module.exports = {
       rating: 8.8,
       authorId: 9,
       genreId: 5,
+      price: 99,
     },
     {
       title: 'Бойцовский клуб',
@@ -233,6 +258,7 @@ module.exports = {
       rating: 8.4,
       authorId: 8,
       genreId: 21,
+      price: 99,
     },
     {
       title: 'История пугачевского бунта',
@@ -242,6 +268,7 @@ module.exports = {
       rating: 8.9,
       authorId: 14,
       genreId: 19,
+      price: 99,
     },
     ]);
   },

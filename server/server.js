@@ -4,6 +4,7 @@ const cors = require('cors');
 const session = require('express-session');
 const store = require('session-file-store');
 const authRouter = require('./routes/authRouter');
+const mainRouter = require('./routes/mainRouter');
 const allBooksRouter = require('./routes/allBooksRouter');
 const authorRouter = require('./routes/authorRouter')
 
@@ -35,6 +36,7 @@ app.use(cors({
 }));
 
 app.use('/auth', authRouter);
+app.use('/main', mainRouter);
 app.use('/books', allBooksRouter);
 app.use('/author',authorRouter)
 

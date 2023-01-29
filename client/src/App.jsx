@@ -8,6 +8,7 @@ import Basket from './components/Pages/Basket/Basket';
 import ClientsPage from './components/Pages/ClientsPage/ClientsPage';
 import Mybook from './components/Pages/Mybook/Mybook';
 import MainPage from './components/Pages/Mainpage/Mainpage';
+import Comics from './components/Pages/Comics/Comics';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
         <Route path="/basket" element={<Basket />} />
         <Route path="/client" element={<ClientsPage />} />
         <Route path="/mybook" element={<Mybook />} />
+        <Route path="/comics" element={<Comics />} />
       </Routes>
     </>
 

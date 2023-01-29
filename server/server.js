@@ -4,6 +4,7 @@ const cors = require('cors');
 const session = require('express-session');
 const store = require('session-file-store');
 const authRouter = require('./routes/authRouter');
+const apiRouter = require('./routes/apiRouter');
 
 require('dotenv').config();
 
@@ -33,5 +34,6 @@ app.use(cors({
 }));
 
 app.use('/auth', authRouter);
+app.use('/api', apiRouter);
 
 app.listen(PORT, () => console.log(`App has started on port ${PORT}`));

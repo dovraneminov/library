@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { booksesAction } from '../../../redux/reducers/booksesSlice'
+import { booksesAction } from '../../../redux/reducers/booksesSlice';
 import OneBook from '../../UI/OneBook/OneBook';
 
 export default function Books() {
@@ -10,7 +10,7 @@ export default function Books() {
   useEffect(() => {
     dispatch(booksesAction());
   }, []);
-  console.log(bookses);
+
   return (
     <div>
       {bookses?.map((book) => (<OneBook book={book} key={book.id} />))}

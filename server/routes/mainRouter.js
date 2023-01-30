@@ -1,5 +1,7 @@
 const express = require('express');
-const { Popular, Author, Book } = require('../db/models');
+const {
+  Popular, Author, Book, Genre,
+} = require('../db/models');
 
 const router = express.Router();
 
@@ -14,8 +16,13 @@ router.get('/publisher', async (req, res) => {
 });
 
 router.get('/getbooks', async (req, res) => {
-  const popular = await Book.findAll();
-  console.log('helo');
+  const books = await Book.findAll({ include: [Author, Genre] });
+  res.json(books);
+});
+
+router.get('/onepopular/:id', async (req, res) => {
+  const { id } = req.params;
+  const popular = await Popular.findAll({ where: { id } });
   res.json(popular);
 });
 module.exports = router;

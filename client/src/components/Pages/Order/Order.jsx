@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { orderAction } from '../../../redux/reducers/orderSlice';
-import { totalPrice } from '../../../redux/reducers/priceSlice';
+// import { totalPrice } from '../../../redux/reducers/priceSlice';
 
 export default function Order() {
   const dispatch = useDispatch();

@@ -2,7 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 import axios from 'axios';
 
 const bookSlice = createSlice({
-  name: 'books',
+  name: 'myBooks',
   initialState: [],
   reducers: {
     getBooks: (state, action) => (action.payload),

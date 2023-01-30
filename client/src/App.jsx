@@ -15,9 +15,11 @@ import Books from './components/Pages/Books/Books';
 import InfoCard from './components/UI/InfoCard/InfoCard';
 import AuthorCard from './components/UI/AuthorCard/AuthorCard';
 import Order from './components/Pages/Order/Order';
-import MainPage from './components/Pages/Mainpage/Mainpage';
+import Comics from './components/Pages/Comics/Comics';
+import OnePopularBook from './components/Pages/Mainpage/UI/OnePopularBook/OnePopularBook';
 import Entry from './components/Pages/Entry';
 import PersonalArea from './components/Pages/PersonalArea/PersonalArea';
+import Mainpage from './components/Pages/Mainpage/Mainpage';
 
 function App() {
   const dispatch = useDispatch();
@@ -29,13 +31,15 @@ function App() {
       <NavBar />
       <Routes>
         <Route path="/" element={(<Navigate to="/main" />)} />
-        <Route path="/main" element={<MainPage />} />
+        <Route path="/main" element={<Mainpage />} />
+        <Route path="/onepopular/:id" element={<OnePopularBook />} />
         <Route path="/genre" element={<Genres />} />
         <Route path="/popular" element={<Popular />} />
         <Route path="/author" element={<Author />} />
         <Route path="/basket" element={<Basket />} />
         <Route path="/client" element={<ClientsPage />} />
         <Route path="/mybook" element={<Mybook />} />
+        <Route path="/comics" element={<Comics />} />
         <Route path="/signup" element={<AuthPage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/entry" element={<Entry />} />

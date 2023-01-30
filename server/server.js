@@ -9,6 +9,7 @@ const mainRouter = require('./routes/mainRouter');
 const allBooksRouter = require('./routes/allBooksRouter');
 const authorRouter = require('./routes/authorRouter');
 const orderRouter = require('./routes/orderRouter');
+const personalAreaRouter = require('./routes/personalAreaRouter');
 
 require('dotenv').config();
 
@@ -42,5 +43,6 @@ app.use('/main', mainRouter);
 app.use('/books', allBooksRouter);
 app.use('/author', authorRouter);
 app.use('/order', orderRouter);
+app.use('/cabinet', personalAreaRouter);
 
 app.listen(PORT, () => console.log(`App has started on port ${PORT}`));

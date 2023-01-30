@@ -1,6 +1,6 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import { NavLink, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { setInfo } from '../../../redux/reducers/infoSlice';
 import { addOrder } from '../../../redux/reducers/orderSlice';
 import { plusOrder } from '../../../redux/reducers/priceSlice';
@@ -23,11 +23,11 @@ export default function OneBook({ book }) {
 
   return (
     <div className="card" style={{ width: '18rem' }}>
-      <img onClick={openInfo} src={book.photo} className="card-img-top" alt="..." />
+      <img onClick={() => openInfo()} src={book.photo} className="card-img-top" alt="..." />
       <div className="card-body">
         <h5 className="card-title">{book.title}</h5>
-        <p className="card-text">{book.Author.name}</p>
-        <p className="card-text">{book.Genre.genre}</p>
+        <p className="card-text">{book?.Author?.name}</p>
+        <p className="card-text">{book?.Genre?.genre}</p>
         <p className="card-text">
           Цена:
           {' '}

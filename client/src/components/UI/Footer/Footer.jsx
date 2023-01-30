@@ -10,9 +10,9 @@ export default function Footer() {
           |
           <a href="/" className="underlined">Политика конфиденциальности</a>
         </div>
-        Позвоните нам
         {' '}
-        <a href="tel:+88005550121">8-800-555-01-21</a>
+        Связаться с
+        <a href="tel:+88005550121" style={{ marginTop: '18px' }}> Library</a>
       </div>
     </footer>
   );

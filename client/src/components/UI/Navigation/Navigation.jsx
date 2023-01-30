@@ -11,7 +11,7 @@ export default function Navigation() {
         ? (
           <ul className="nav nav-tabs d-flex justify-content-around border-end border-secondary border-opacity-25" id="navStyle">
             <li className="nav-item">
-              <Link className="nav-link text-dark" to="/genre">Жанры</Link>
+              <Link className="nav-link text-dark" to="/books">Книги</Link>
             </li>
             <li className="nav-item">
               <Link className="nav-link text-dark" to="/popular">Популярное</Link>
@@ -26,7 +26,7 @@ export default function Navigation() {
               <Link className="nav-link text-dark" to="/basket">Корзина</Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link text-dark" to="/client">Личный кабинет</Link>
+              <Link className="nav-link text-dark" to="/cabinet">Личный кабинет</Link>
             </li>
           </ul>
         )

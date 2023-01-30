@@ -18,6 +18,7 @@ import Order from './components/Pages/Order/Order';
 import Comics from './components/Pages/Comics/Comics';
 import OnePopularBook from './components/Pages/Mainpage/UI/OnePopularBook/OnePopularBook';
 import Entry from './components/Pages/Entry';
+import PersonalArea from './components/Pages/PersonalArea/PersonalArea';
 import Mainpage from './components/Pages/Mainpage/Mainpage';
 import MyPaiment from './components/Pages/MyPaiment/MyPaiment';
 
@@ -48,6 +49,7 @@ function App() {
         <Route path="/books/info/:id" element={<InfoCard />} />
         <Route path="/author/:id" element={<AuthorCard />} />
         <Route path="/order" element={<Order />} />
+        <Route path="/cabinet" element={<PersonalArea />} />
       </Routes>
     </>
 

@@ -41,7 +41,7 @@ export default function Head() {
             </Link>
           )
           : (
-            <Button onClick={toggle} className="btn btn-outline-success text-dark border border-0" type="button">
+            <Button onClick={toggle} className="btn btn-outline-light text-dark border border-0" type="button">
               <BsBoxArrowInRight style={{ width: '30px', height: '28px' }} />
               {' '}
               Войти

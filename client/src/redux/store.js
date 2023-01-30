@@ -10,6 +10,7 @@ import authorReducer from './reducers/authorSlice';
 import orderReducer from './reducers/orderSlice';
 // import booksesReducer from './reducers/booksesSlice';
 import priceReducer from './reducers/priceSlice';
+import personalAreaReducer from './reducers/personalAreaSlice';
 // import onePopularSlice from './onePopularSlice';
 
 const store = configureStore({
@@ -26,6 +27,7 @@ const store = configureStore({
     author: authorReducer,
     order: orderReducer,
     price: priceReducer,
+    cabinet: personalAreaReducer,
   },
 });
 

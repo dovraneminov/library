@@ -35,7 +35,7 @@ export default function Mainpage() {
         <MySlide />
       </div>
       <div className="border_s"> </div>
-      <NavLink>
+      <NavLink to="/popular">
         <h3>
           популярные:
         </h3>
@@ -57,14 +57,14 @@ export default function Mainpage() {
         </div>
       ))}
       <div className="border_s"> </div>
-      <NavLink>
+      <NavLink to="/author">
         <h3>
           издатели:
         </h3>
       </NavLink>
       {publisher?.slice(0, 4).map((el) => (
-        <div key={el.id} className="genres">
-          <MyPublisher />
+        <div className="genres">
+          <MyPublisher el={el} key={el.id} />
         </div>
       ))}
     </>

@@ -1,6 +1,7 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 import {
-  Card, CardBody, CardLink, CardSubtitle, CardTitle,
+  Card, CardBody, CardSubtitle, CardTitle,
 } from 'reactstrap';
 
 export default function MyPopular({ el }) {
@@ -21,16 +22,14 @@ export default function MyPopular({ el }) {
           Card subtitle
         </CardSubtitle>
       </CardBody>
-      <img
-        alt="Card cap"
-        src="https://picsum.photos/318/180"
-        width="100%"
-      />
-      <CardBody>
-        <CardLink href="#">
-          Card Link
-        </CardLink>
-      </CardBody>
+      <NavLink to={`/onepopular/${el.id}`}>
+        <img
+          alt="Card cap"
+          src="https://picsum.photos/318/180"
+          width="100%"
+        />
+      </NavLink>
+      <CardBody />
     </Card>
   );
 }

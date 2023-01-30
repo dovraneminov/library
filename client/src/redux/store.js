@@ -15,6 +15,7 @@ const store = configureStore({
     publisher: publisherSlice,
     myBooks: bookSlice,
     books: booksReducer,
+    bookses: booksesReducer,
     info: infoReducer,
     author: authorReducer,
   },

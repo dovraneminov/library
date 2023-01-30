@@ -3,15 +3,16 @@ import axios from 'axios';
 
 export const orderSlice = createSlice({
   name: 'order',
-  initialState: {},
+  initialState: [],
   reducers: {
     setOrder: (state, action) => action.payload,
+    addOrder: (state, action) => [...state, action.payload],
   },
 });
-export const { setOrder } = orderSlice.actions;
+export const { setOrder, addOrder } = orderSlice.actions;
 
-export const orderAction = (e) => (dispatch) => {
-  axios.post('http://localhost:3001/order/add', Object.fromEntries(new FormData(e.target))).then((res) => dispatch(setOrder(res.data)));
+export const orderAction = (inputs) => (dispatch) => {
+  axios.post('http://localhost:3001/order/add', inputs).then((res) => dispatch(setOrder(res.data)));
 };
 
 export default orderSlice.reducer;

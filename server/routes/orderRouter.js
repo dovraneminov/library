@@ -5,10 +5,11 @@ const router = express.Router();
 
 router.post('/add', async (req, res) => {
   const {
-    adress, date, time, price, days,
+    bookId, popularId, adress, date, time, price, days,
   } = req.body;
-  const newOrder = Order.create({
-    userId: req.session.user.id, adress, date, time, price, days,
+  console.log(req.body);
+  const newOrder = await Order.create({
+    userId: req.session?.user?.id, bookId, popularId, adress, date, time, price, days: Number(days),
   });
   res.json(newOrder);
 });

@@ -22,6 +22,8 @@ module.exports = (sequelize, DataTypes) => {
     adress: DataTypes.STRING,
     date: DataTypes.DATE,
     time: DataTypes.TIME,
+    price: DataTypes.INTEGER,
+    days: DataTypes.INTEGER,
   }, {
     sequelize,
     modelName: 'Order',

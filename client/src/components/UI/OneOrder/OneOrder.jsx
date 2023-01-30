@@ -9,9 +9,6 @@ export default function OneOrder({ order }) {
     dispatch(cabinetDelete(order.id));
   };
 
-
-  
-
   return (
     <div className="card" style={{ width: '18rem' }}>
       <div className="card-body">

@@ -1,8 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import {
-  cabinetAction, cabinetDelete, deleteCabinet, setCabinet,
-} from '../../../redux/reducers/personalAreaSlice';
+import { cabinetAction } from '../../../redux/reducers/personalAreaSlice';
 import OneOrder from '../../UI/OneOrder/OneOrder';
 
 export default function PersonalArea() {

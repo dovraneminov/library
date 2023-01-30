@@ -15,6 +15,7 @@ import Books from './components/Pages/Books/Books';
 import InfoCard from './components/UI/InfoCard/InfoCard';
 import AuthorCard from './components/UI/AuthorCard/AuthorCard';
 import MainPage from './components/Pages/Mainpage/Mainpage';
+import OnePopularBook from './components/Pages/Mainpage/UI/OnePopularBook/OnePopularBook';
 import Entry from './components/Pages/Entry';
 
 function App() {
@@ -28,6 +29,7 @@ function App() {
       <Routes>
         <Route path="/" element={(<Navigate to="/main" />)} />
         <Route path="/main" element={<MainPage />} />
+        <Route path="/onepopular/:id" element={<OnePopularBook />} />
         <Route path="/genre" element={<Genres />} />
         <Route path="/popular" element={<Popular />} />
         <Route path="/author" element={<Author />} />

@@ -1,9 +1,9 @@
 import React from 'react';
 import {
-  Card, CardBody, CardLink, CardSubtitle, CardText, CardTitle,
+  Card, CardBody, CardLink, CardTitle,
 } from 'reactstrap';
 
-export default function MyPublisher() {
+export default function MyPublisher({ el }) {
   return (
     <Card
       style={{
@@ -12,27 +12,15 @@ export default function MyPublisher() {
     >
       <CardBody>
         <CardTitle tag="h5">
-          Card title
+          {el.name}
         </CardTitle>
-        <CardSubtitle
-          className="mb-2 text-muted"
-          tag="h6"
-        >
-          Card subtitle
-        </CardSubtitle>
       </CardBody>
       <img
         alt="Card cap"
-        src="https://picsum.photos/318/180"
+        src={el.photo}
         width="100%"
       />
       <CardBody>
-        <CardText>
-          Some
-        </CardText>
-        <CardLink href="#">
-          Card Link
-        </CardLink>
         <CardLink href="#">
           Another Link
         </CardLink>

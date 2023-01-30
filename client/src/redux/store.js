@@ -3,7 +3,7 @@ import userReducer from './reducers/userReducer';
 import popularSlice from './popularSlice';
 import publisherSlice from './publisherSlice';
 import bookSlice from './bookSlice';
-import booksReducer from './reducers/booksReducer';
+// import booksReducer from './reducers/booksReducer';
 import booksesReducer from './reducers/booksesSlice';
 import infoReducer from './reducers/infoSlice';
 import authorReducer from './reducers/authorSlice';
@@ -20,7 +20,7 @@ const store = configureStore({
     // popular: onePopularSlice,
     publisher: publisherSlice,
     myBooks: bookSlice,
-    bookses: booksReducer,
+    // bookses: booksReducer,
     bookses: booksesReducer,
     books: bookSlice,
     info: infoReducer,

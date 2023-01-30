@@ -12,8 +12,10 @@
     "axios": "^1.2.4",
     "bootstrap": "^5.2.3",
     "comicgen": "^0.4.0",
+    "framer-motion": "^8.5.4",
     "react": "^18.2.0",
     "react-bootstrap": "^2.7.0",
+    "react-credit-cards": "^0.8.3",
     "react-dom": "^18.2.0",
     "react-icons": "^4.7.1",
     "react-redux": "^8.0.5",
@@ -21,6 +23,8 @@
     "react-scripts": "5.0.1",
     "react-svg": "^16.0.0",
     "reactstrap": "^9.1.5",
+    "sass": "^1.57.1",
+    "scss": "^0.2.4",
     "web-vitals": "^2.1.4"
   },
   "scripts": {

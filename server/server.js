@@ -3,10 +3,11 @@ const morgan = require('morgan');
 const cors = require('cors');
 const session = require('express-session');
 const store = require('session-file-store');
+const bodyParser = require('body-parser');
 const authRouter = require('./routes/authRouter');
 const mainRouter = require('./routes/mainRouter');
 const allBooksRouter = require('./routes/allBooksRouter');
-const authorRouter = require('./routes/authorRouter')
+const authorRouter = require('./routes/authorRouter');
 
 require('dotenv').config();
 
@@ -34,9 +35,11 @@ app.use(cors({
 }));
 app.use(session(sessionConfig));
 
+app.use(bodyParser.urlencoded({ extended: false }));
+
 app.use('/auth', authRouter);
 app.use('/main', mainRouter);
 app.use('/books', allBooksRouter);
-app.use('/author',authorRouter)
+app.use('/author', authorRouter);
 
 app.listen(PORT, () => console.log(`App has started on port ${PORT}`));

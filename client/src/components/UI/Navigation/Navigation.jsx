@@ -6,7 +6,7 @@ import './navigation.css';
 export default function Navigation() {
   const user = useSelector((state) => state.user);
   return (
-    <diV>
+    <div>
       {user?.id
         ? (
           <ul className="nav nav-tabs d-flex justify-content-around border-end border-secondary border-opacity-25" id="navStyle">
@@ -46,6 +46,6 @@ export default function Navigation() {
             </li>
           </ul>
         )}
-    </diV>
+    </div>
   );
 }

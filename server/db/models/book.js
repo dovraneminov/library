@@ -13,6 +13,7 @@ module.exports = (sequelize, DataTypes) => {
       this.hasMany(models.Review, { foreignKey: 'bookId' });
       this.belongsTo(models.Author, { foreignKey: 'authorId' });
       this.belongsTo(models.Genre, { foreignKey: 'genreId' });
+      this.hasMany(models.Order, { foreignKey: 'bookId' });
     }
   }
   Book.init({
@@ -21,6 +22,7 @@ module.exports = (sequelize, DataTypes) => {
     content: DataTypes.TEXT,
     photo: DataTypes.STRING,
     rating: DataTypes.INTEGER,
+    price: DataTypes.INTEGER,
     authorId: DataTypes.INTEGER,
     genreId: DataTypes.INTEGER,
   }, {

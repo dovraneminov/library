@@ -1,9 +1,10 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 import {
-  Card, CardBody, CardLink, CardSubtitle, CardText, CardTitle,
+  Card, CardBody, CardSubtitle, CardTitle,
 } from 'reactstrap';
 
-export default function MyPopular() {
+export default function MyPopular({ el }) {
   return (
     <Card
       style={{
@@ -12,7 +13,7 @@ export default function MyPopular() {
     >
       <CardBody>
         <CardTitle tag="h5">
-          Card title
+          {el.title}
         </CardTitle>
         <CardSubtitle
           className="mb-2 text-muted"
@@ -21,22 +22,14 @@ export default function MyPopular() {
           Card subtitle
         </CardSubtitle>
       </CardBody>
-      <img
-        alt="Card cap"
-        src="https://picsum.photos/318/180"
-        width="100%"
-      />
-      <CardBody>
-        <CardText>
-          Some
-        </CardText>
-        <CardLink href="#">
-          Card Link
-        </CardLink>
-        <CardLink href="#">
-          Another Link
-        </CardLink>
-      </CardBody>
+      <NavLink to={`/onepopular/${el.id}`}>
+        <img
+          alt="Card cap"
+          src="https://picsum.photos/318/180"
+          width="100%"
+        />
+      </NavLink>
+      <CardBody />
     </Card>
   );
 }

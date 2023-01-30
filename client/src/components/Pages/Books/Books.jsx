@@ -10,9 +10,9 @@ export default function Books() {
   useEffect(() => {
     dispatch(booksesAction());
   }, []);
-  console.log(bookses);
+
   return (
-    <div>
+    <div
       {bookses?.map((book) => (<OneBook book={book} key={book.id} />))}
     </div>
   );

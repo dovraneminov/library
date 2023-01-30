@@ -1,42 +1,13 @@
 import React from 'react';
-import {
-  Card, CardBody, CardLink, CardSubtitle, CardText, CardTitle,
-} from 'reactstrap';
 
-export default function MyPublisher() {
+export default function MyPublisher({ el }) {
+  console.log('eeeeeeeeeee', el);
   return (
-    <Card
-      style={{
-        width: '18rem',
-      }}
-    >
-      <CardBody>
-        <CardTitle tag="h5">
-          Card title
-        </CardTitle>
-        <CardSubtitle
-          className="mb-2 text-muted"
-          tag="h6"
-        >
-          Card subtitle
-        </CardSubtitle>
-      </CardBody>
-      <img
-        alt="Card cap"
-        src="https://picsum.photos/318/180"
-        width="100%"
-      />
-      <CardBody>
-        <CardText>
-          Some
-        </CardText>
-        <CardLink href="#">
-          Card Link
-        </CardLink>
-        <CardLink href="#">
-          Another Link
-        </CardLink>
-      </CardBody>
-    </Card>
+    <div className="card border border-0 mb-3" style={{ width: '18rem' }}>
+      <img src={el.photo} className="card-img-top rounded" alt="..." style={{ boxShadow: '1px 0px 5px grey', height: '250px' }} />
+      <div className="card-body p-0">
+        <h5 className="card-title m-0 mt-1">{el.name}</h5>
+      </div>
+    </div>
   );
 }

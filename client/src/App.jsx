@@ -19,6 +19,7 @@ import Comics from './components/Pages/Comics/Comics';
 import OnePopularBook from './components/Pages/Mainpage/UI/OnePopularBook/OnePopularBook';
 import Entry from './components/Pages/Entry';
 import Mainpage from './components/Pages/Mainpage/Mainpage';
+import MyPaiment from './components/Pages/MyPaiment/MyPaiment';
 
 function App() {
   const dispatch = useDispatch();
@@ -31,6 +32,7 @@ function App() {
       <Routes>
         <Route path="/" element={(<Navigate to="/main" />)} />
         <Route path="/main" element={<Mainpage />} />
+        <Route path="/paiment" element={<MyPaiment />} />
         <Route path="/onepopular/:id" element={<OnePopularBook />} />
         <Route path="/genre" element={<Genres />} />
         <Route path="/popular" element={<Popular />} />

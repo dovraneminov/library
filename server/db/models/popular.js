@@ -13,6 +13,7 @@ module.exports = (sequelize, DataTypes) => {
       this.hasMany(models.Review, { foreignKey: 'popularId' });
       this.belongsTo(models.Author, { foreignKey: 'authorId' });
       this.belongsTo(models.Genre, { foreignKey: 'genreId' });
+      this.hasMany(models.Order, { foreignKey: 'popularId' });
     }
   }
   Popular.init({

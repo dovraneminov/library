@@ -41,15 +41,6 @@ module.exports = {
         },
         type: Sequelize.INTEGER,
       },
-      myBookId: {
-        references: {
-          model: {
-            tableName: 'MyBooks',
-          },
-          key: 'id',
-        },
-        type: Sequelize.INTEGER,
-      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE,

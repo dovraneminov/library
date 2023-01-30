@@ -10,7 +10,6 @@ import MySlide from './UI/MySlide/MySlide';
 import { getPersonsAction } from '../../../redux/popularSlice';
 import { getPublisherAction } from '../../../redux/publisherSlice';
 import { getBooksAction } from '../../../redux/bookSlice';
-// import MyCard from './UI/MyCard/MyCard';
 import OneBook from '../../UI/OneBook/OneBook';
 // import Footer from '../../UI/Footer/footer';
 
@@ -22,7 +21,7 @@ export default function Mainpage() {
   const popular = useSelector((store) => store.persons);
   const publisher = useSelector((store) => store.publisher);
   const myBooks = useSelector((store) => store.myBooks);
-  console.log(myBooks);
+
   return (
     <>
       <MySlide />
@@ -80,6 +79,8 @@ export default function Mainpage() {
         </div>
       </div>
       <div />
+
+      {/* <Footer /> */}
 
       {/* <Footer /> */}
     </>

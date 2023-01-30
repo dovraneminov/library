@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 import {
   Card, CardBody, CardLink, CardSubtitle, CardTitle,
 } from 'reactstrap';
@@ -21,11 +22,13 @@ export default function MyPopular({ el }) {
           Card subtitle
         </CardSubtitle>
       </CardBody>
-      <img
-        alt="Card cap"
-        src="https://picsum.photos/318/180"
-        width="100%"
-      />
+      <NavLink to={`/onepopular/${el.id}`}>
+        <img
+          alt="Card cap"
+          src="https://picsum.photos/318/180"
+          width="100%"
+        />
+      </NavLink>
       <CardBody>
         <CardLink href="#">
           Card Link

@@ -10,7 +10,8 @@ import MySlide from './UI/MySlide/MySlide';
 import { getPersonsAction } from '../../../redux/popularSlice';
 import { getPublisherAction } from '../../../redux/publisherSlice';
 import { getBooksAction } from '../../../redux/bookSlice';
-import OneBook from '../../UI/OneBook/OneBook';
+import Footer from '../../UI/Footer/Footer';
+import BooksMain from '../../UI/BooksMain/BooksMain';
 // import Footer from '../../UI/Footer/footer';
 
 export default function Mainpage() {
@@ -32,36 +33,26 @@ export default function Mainpage() {
         <MdArrowForwardIos />
       </Link>
 
-      <section className="waiting">
-        <div className="container">
-
-          <div className="waiting_wrapper">
-
-            {popular?.map((el) => (
-              <div className="genres">
-                <MyPopular key={el.id} el={el} />
-              </div>
-            ))}
-
-          </div>
-        </div>
-      </section>
+      <div className="row mt-3 d-flex justify-content-around ">
+        {popular?.map((el) => (
+          <MyPopular key={el.id} el={el} />
+        ))}
+      </div>
 
       <Link to="/books" className="forLink">
-
         Книги
         <MdArrowForwardIos />
       </Link>
       <div className="row mt-3 d-flex justify-content-around">
         {myBooks?.slice(0, 4).map((el) => (
-          <OneBook book={el} key={el.id} />
+          <BooksMain book={el} key={el.id} />
         ))}
       </div>
-      <div className="border_s"> </div>
-      <NavLink>
-        <h3>
-          издатели:
-        </h3>
+
+      <NavLink className="forLink">
+
+        Авторы
+        <MdArrowForwardIos />
       </NavLink>
       {publisher?.slice(0, 4).map((el) => (
         <div key={el.id} className="genres">
@@ -80,9 +71,8 @@ export default function Mainpage() {
       </div>
       <div />
 
-      {/* <Footer /> */}
+      <Footer />
 
-      {/* <Footer /> */}
     </>
   );
 }

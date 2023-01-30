@@ -26,8 +26,8 @@ export default function OneBook({ book }) {
       <img onClick={() => openInfo()} src={book.photo} className="card-img-top" alt="..." />
       <div className="card-body">
         <h5 className="card-title">{book.title}</h5>
-        <p className="card-text">{book.Author.name}</p>
-        <p className="card-text">{book.Genre.genre}</p>
+        <p className="card-text">{book?.Author?.name}</p>
+        <p className="card-text">{book?.Genre?.genre}</p>
         <p className="card-text">
           Цена:
           {' '}

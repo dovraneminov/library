@@ -11,15 +11,22 @@ export default function OneBook({ book }) {
     dispatch(setInfo(book));
     navigate(`/books/info/${book?.id}`);
   }
+  console.log(book, '======+++++');
 
   return (
-    <div className="card" style={{ width: '18rem' }}>
-      <img src={book.photo} className="card-img-top" alt="..." />
-      <div className="card-body">
-        <h5 className="card-title">{book?.title}</h5>
-        <p className="card-text">{book?.Author?.name}</p>
-        <p className="card-text">{book?.Genre?.genre}</p>
-        <button onClick={() => openInfo()} type="button" className="btn btn-primary">Узнать подробнее</button>
+    <div className="card border border-0" style={{ width: '18rem' }}>
+      <img onClick={() => openInfo()} src={book.photo} className="card-img-top rounded" alt="..." style={{ boxShadow: '1px 0px 5px grey' }} />
+      <div className="card-body p-0 pt-1">
+        <h5 className="card-title m-0">
+          {book?.title}
+          {' '}
+        </h5>
+        <p className="card-text fw-lighter" style={{ fontSize: '14px' }}>{book?.Author.name}</p>
+        <p className="card-text fw-lighter" style={{ fontSize: '14px' }}>
+          Рейтинг:
+          {' '}
+          {book?.rating}
+        </p>
       </div>
     </div>
   );

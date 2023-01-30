@@ -33,3 +33,14 @@
 .genres{
     margin: 40px;
 }
+
+.forLink{
+    text-decoration: none;
+    color: black;
+    font-size: 25px;
+    font-family: Roboto;
+    font-weight: 600;
+    line-height: 21px;
+    margin: 20px 0 20px 20px;
+    padding-bottom: 20px;
+}

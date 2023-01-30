@@ -34,7 +34,10 @@ export default function Order() {
   console.log(inputs);
   return (
     <>
-      <div>{user?.name}, отличные книги! Введите свои данные для продолжения</div>
+      <div>
+        {user?.name}
+        , отличные книги! Введите свои данные для продолжения
+      </div>
       <div>
         В вашем заказе:
         {' '}

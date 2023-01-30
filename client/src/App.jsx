@@ -17,6 +17,7 @@ import AuthorCard from './components/UI/AuthorCard/AuthorCard';
 import Order from './components/Pages/Order/Order';
 import MainPage from './components/Pages/Mainpage/Mainpage';
 import Entry from './components/Pages/Entry';
+import PersonalArea from './components/Pages/PersonalArea/PersonalArea';
 
 function App() {
   const dispatch = useDispatch();
@@ -42,6 +43,7 @@ function App() {
         <Route path="/books/info/:id" element={<InfoCard />} />
         <Route path="/author/:id" element={<AuthorCard />} />
         <Route path="/order" element={<Order />} />
+        <Route path="/cabinet" element={<PersonalArea />} />
       </Routes>
     </>
 

@@ -26,9 +26,9 @@ export default function HeaderMyBook() {
           {' '}
           В чем секрет? Просто попробуйте
           {' '}
-          <span>СОЗДАТЬ</span>
+          <span>Наш</span>
           {' '}
-          свою книгу!
+          сервис!
         </div>
 
         <button type="button" className="promoBtn">Моя личная Книга</button>

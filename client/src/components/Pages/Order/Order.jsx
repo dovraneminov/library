@@ -33,7 +33,6 @@ export default function Order() {
     dispatch(nullMoney());
     dispatch(nullOrder());
     navigate('/paiment');
-
   };
 
   console.log(inputs);

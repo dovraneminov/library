@@ -26,7 +26,7 @@ export default function Mainpage() {
 
   return (
     <>
-       <MyList />
+      <MyList />
       <HeaderMyBook />
       <MySlide />
 

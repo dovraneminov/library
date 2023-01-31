@@ -6,24 +6,30 @@ import { BsBoxArrowInRight } from 'react-icons/bs';
 import { logoutUser } from '../../../redux/actions/userAction';
 import AuthPage from '../../Pages/AuthPage';
 import './head.css';
+import { fetchInput } from '../../../redux/inputSlice';
 
 export default function Head() {
   const [modal, setModal] = useState(false);
   const toggle = () => setModal(!modal);
-
+  const [input, setInput] = useState('');
   // const [isOpen, setIsOpen] = useState(false);
 
   // const toggle = () => setIsOpen(!isOpen);
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const user = useSelector((state) => state.user);
+  const changeHandler = (e) => {
+    dispatch(fetchInput(e.target.value));
+    setInput(e.target.value);
+    navigate('/main');
+  };
   return (
     <nav className="navbar bg-light border border-secondary mb-1 border-opacity-25" id="font-link" style={{ backgroundImage: 'url(https://t3.ftcdn.net/jpg/04/12/82/16/360_F_412821610_95RpjzPXCE2LiWGVShIUCGJSktkJQh6P.jpg)', backgroundSize: '100%' }}>
       <div className="container-fluid">
         <Link to="/main" className="navbar-brand">Library</Link>
         <form className="d-flex" role="search">
-          <input className="form-control me-2 border border-2  border-dark" type="search" placeholder="Книга, автор, жанр, популярное" aria-label="Search" style={{ width: '600px' }} />
-          <button className="btn btn-outline-success border border-2  border-dark text-dark" type="submit">Search</button>
+          <input onChange={changeHandler} value={input} className="form-control me-2 border border-2border-dark" type="search" placeholder="Книга, автор, популярное" aria-label="Search" style={{ width: '600px' }} />
+          <button onChange={changeHandler} className="btn btn-outline-success border border-2 border-dark text-dark" type="submit">Home</button>
         </form>
 
         {user?.id

@@ -11,6 +11,7 @@ import { getPublisherAction } from '../../../redux/publisherSlice';
 import { getBooksAction } from '../../../redux/bookSlice';
 // import MyCard from './UI/MyCard/MyCard';
 import OneBook from '../../UI/OneBook/OneBook';
+import MyList from '../MyList';
 
 export default function Mainpage() {
   const dispatch = useDispatch();
@@ -22,6 +23,7 @@ export default function Mainpage() {
   const myBooks = useSelector((store) => store.myBooks);
   return (
     <>
+      <MyList />
       <div className="body content">
         <div className="text_content">
           <h1>Dovacin</h1>

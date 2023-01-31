@@ -7,6 +7,7 @@ import bookSlice from './bookSlice';
 import booksReducer from './reducers/booksReducer';
 import infoReducer from './reducers/infoSlice';
 import authorReducer from './reducers/authorSlice';
+import inputSlice from './inputSlice';
 
 const store = configureStore({
   reducer: {
@@ -15,9 +16,10 @@ const store = configureStore({
     publisher: publisherSlice,
     myBooks: bookSlice,
     books: booksReducer,
-    bookses: booksesReducer,
+    // bookses: booksesReducer,
     info: infoReducer,
     author: authorReducer,
+    input: inputSlice,
   },
 });
 

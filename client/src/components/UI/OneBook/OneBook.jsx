@@ -20,8 +20,6 @@ export default function OneBook({ book }) {
     navigate('/order');
   }
 
-  
-
   return (
     <div className="card m-2 p-0 border border-0" style={{ width: '18rem', boxShadow: '1px 0px 5px grey' }}>
       <img onClick={() => openInfo()} src={book.photo} className="card-img-top" alt="..." />

@@ -22,6 +22,7 @@ import PersonalArea from './components/Pages/PersonalArea/PersonalArea';
 import Mainpage from './components/Pages/Mainpage/Mainpage';
 import MyPaiment from './components/Pages/MyPaiment/MyPaiment';
 import AuthorInfo from './components/UI/AuthorInfo/AuthorInfo';
+import Favorite from './components/Pages/Favorite/Favorite';
 
 function App() {
   const dispatch = useDispatch();
@@ -52,6 +53,7 @@ function App() {
         <Route path="/order" element={<Order />} />
         <Route path="/cabinet" element={<PersonalArea />} />
         <Route path="/publisher/:id" element={<AuthorInfo />} />
+        <Route path="/favorite" element={<Favorite />} />
       </Routes>
     </>
 

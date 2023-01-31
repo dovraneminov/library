@@ -3,6 +3,7 @@ const morgan = require('morgan');
 const cors = require('cors');
 const session = require('express-session');
 const store = require('session-file-store');
+const bodyParser = require('body-parser');
 const authRouter = require('./routes/authRouter');
 const apiRouter = require('./routes/apiRouter');
 const mainRouter = require('./routes/mainRouter');
@@ -36,6 +37,8 @@ app.use(cors({
   origin: true,
 }));
 app.use(session(sessionConfig));
+
+app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use('/auth', authRouter);
 app.use('/api', apiRouter);

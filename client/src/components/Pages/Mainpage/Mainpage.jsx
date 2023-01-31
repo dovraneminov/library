@@ -9,11 +9,11 @@ import MySlide from './UI/MySlide/MySlide';
 import { getPersonsAction } from '../../../redux/popularSlice';
 import { getPublisherAction } from '../../../redux/publisherSlice';
 import { getBooksAction } from '../../../redux/bookSlice';
-// import OneBook from '../../UI/OneBook/OneBook';
+import OneBook from '../../UI/OneBook/OneBook';
+import MyList from '../MyList';
 import Footer from '../../UI/Footer/Footer';
 import BooksMain from '../../UI/BooksMain/BooksMain';
 import HeaderMyBook from '../../UI/HeaderMyBook/HeaderMyBook';
-// import Footer from '../../UI/Footer/footer';
 
 export default function Mainpage() {
   const dispatch = useDispatch();
@@ -26,6 +26,7 @@ export default function Mainpage() {
 
   return (
     <>
+       <MyList />
       <HeaderMyBook />
       <MySlide />
 

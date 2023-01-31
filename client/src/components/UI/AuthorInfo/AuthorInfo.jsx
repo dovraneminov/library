@@ -1,19 +1,20 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-// import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { authorInfoAction } from '../../../redux/reducers/authorInfoSlice';
 import AuthorBooks from '../AuthorBooks/AuthorBooks';
 
 export default function AuthorInfo() {
   const dispatch = useDispatch();
+  const { id } = useParams();
 
   const authorInfo = useSelector((store) => store.authorInfo);
 
   console.log('info', authorInfo[0]);
 
   useEffect(() => {
-    dispatch(authorInfoAction(authorInfo.id));
-  }, [authorInfo]);
+    dispatch(authorInfoAction(id));
+  }, []);
 
   return (
     <div>

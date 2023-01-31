@@ -1,7 +1,9 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { setAuthor } from '../../../redux/reducers/authorSlice';
+import { booksesAction, setBookses } from '../../../redux/reducers/booksesSlice';
+import { infoAction } from '../../../redux/reducers/infoSlice';
 import { setInfo } from '../../../redux/reducers/infoSlice';
 import { addOrder } from '../../../redux/reducers/orderSlice';
 import { plusOrder } from '../../../redux/reducers/priceSlice';
@@ -12,6 +14,7 @@ import InfoCardText from '../InfoCardText/InfoCardText';
 export default function InfoCard() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const { id } = useParams();
   const info = useSelector((store) => store.info);
 
   useEffect(() => {
@@ -23,12 +26,15 @@ export default function InfoCard() {
     navigate(`/books/author/${info?.id}`);
   }
 
+  useEffect(() => {
+    dispatch(infoAction(id));
+  }, []);
+  
   function openOrder() {
     dispatch(plusOrder(info.price));
     dispatch(addOrder(info));
     navigate('/order');
   }
-  console.log('8888forcheck8888', info);
 
   return (
     <>

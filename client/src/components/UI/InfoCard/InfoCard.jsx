@@ -1,17 +1,24 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { setAuthor } from '../../../redux/reducers/authorSlice';
+import { booksesAction, setBookses } from '../../../redux/reducers/booksesSlice';
+import { infoAction } from '../../../redux/reducers/infoSlice';
 
 export default function InfoCard() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const { id } = useParams();
   const info = useSelector((store) => store.info);
 
   function openAuthor() {
     dispatch(setAuthor(info));
     navigate(`/books/author/${info?.id}`);
   }
+
+  useEffect(() => {
+    dispatch(infoAction(id));
+  }, []);
 
   return (
     <div className="card" style={{ width: '18rem' }}>

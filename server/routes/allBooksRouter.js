@@ -10,14 +10,22 @@ router.get('/', async (req, res) => {
 
 router.get('/info/:id', async (req, res) => {
   const { id } = req.params;
-  const oneBook = await Book.findOne({ where: { id }, include: [Author, Genre] });
-  res.json(oneBook);
+  try {
+    const oneBook = await Book.findOne({ where: { id }, include: [Author, Genre] });
+    res.json(oneBook);
+  } catch (e) {
+    console.log(e);
+  }
 });
 
 router.get('/author/:id', async (req, res) => {
   const { id } = req.params;
-  const author = await Book.findOne({ where: { id: authorId }, include: [Author, Genre] });
-  res.json(author);
+  try {
+    const author = await Book.findOne({ where: { id: authorId }, include: [Author, Genre] });
+    res.json(author);
+  } catch (e) {
+    console.log(e);
+  }
 });
 
 module.exports = router;

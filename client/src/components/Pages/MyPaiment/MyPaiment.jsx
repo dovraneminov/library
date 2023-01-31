@@ -1,12 +1,9 @@
 import React, { useState } from 'react';
 import Cards from 'react-credit-cards';
 import './style.scss';
-// import { useDispatch } from 'react-redux';
 import AnimatedPage from '../../UI/AnimatedPage/AnimatedPage';
 
 export default function MyPaiment() {
-//   const dispatch = useDispatch();
-//   const [amount, setAmount] = useState('');
   const [number, setNumber] = useState('');
   const [name, setName] = useState('');
   const [expiry, setExpiry] = useState('');

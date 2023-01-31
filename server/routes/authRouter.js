@@ -48,6 +48,13 @@ router.post('/login', async (req, res) => {
     if (compare) {
       const sessionUser = JSON.parse(JSON.stringify(userInDb));
       delete sessionUser.password;
+      // const message = {
+      //   from: 'Mailer test <test.tester.test@internet.ru>',
+      //   to: req.body.email,
+      //   subject: 'Message from Node js',
+      //   text: 'You are authorizing.',
+      // };
+      // mailer(message);
       req.session.user = sessionUser;
       return res.json(sessionUser);
     }

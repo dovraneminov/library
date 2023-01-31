@@ -29,7 +29,7 @@ export default function Head() {
         <Link to="/main" className="navbar-brand">Library</Link>
         <form className="d-flex" role="search">
           <input onChange={changeHandler} value={input} className="form-control me-2 border border-2border-dark" type="search" placeholder="Книга, автор, популярное" aria-label="Search" style={{ width: '600px' }} />
-          <button onChange={changeHandler} className="btn btn-outline-success border border-2 border-dark text-dark" type="submit">Home</button>
+          <button onChange={changeHandler} className="btn btn-outline-success border border-2 border-dark text-dark" type="submit">Search</button>
         </form>
 
         {user?.id
@@ -47,7 +47,7 @@ export default function Head() {
             </Link>
           )
           : (
-            <Button onClick={toggle} className="btn btn-outline-light text-dark border border-0" type="button">
+            <Button onClick={toggle} className="btn btn-outline-success text-dark border border-0" type="button">
               <BsBoxArrowInRight style={{ width: '30px', height: '28px' }} />
               {' '}
               Войти

@@ -3,8 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate, useParams } from 'react-router-dom';
 import { setAuthor } from '../../../redux/reducers/authorSlice';
 import { booksesAction, setBookses } from '../../../redux/reducers/booksesSlice';
-import { infoAction } from '../../../redux/reducers/infoSlice';
-import { setInfo } from '../../../redux/reducers/infoSlice';
+import { infoAction, setInfo } from '../../../redux/reducers/infoSlice';
 import { addOrder } from '../../../redux/reducers/orderSlice';
 import { plusOrder } from '../../../redux/reducers/priceSlice';
 import Footer from '../Footer/Footer';
@@ -29,7 +28,7 @@ export default function InfoCard() {
   useEffect(() => {
     dispatch(infoAction(id));
   }, []);
-  
+
   function openOrder() {
     dispatch(plusOrder(info.price));
     dispatch(addOrder(info));
@@ -95,3 +94,4 @@ export default function InfoCard() {
     </>
   );
 }
+this.hasMany(models.Order, { foreignKey: 'userId' });

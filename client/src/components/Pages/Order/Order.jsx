@@ -74,7 +74,7 @@ export default function Order() {
           </div>
           <div className="mx-auto mb-3">
             <label htmlFor="exampleInputPassword1" className="form-label" style={{ width: '300px' }}>
-              Password
+              Дата доставки
               <input
                 name="date"
                 type="date"
@@ -88,7 +88,7 @@ export default function Order() {
           </div>
           <div className="mx-auto mb-3">
             <label htmlFor="exampleInputPassword1" className="form-label" style={{ width: '300px' }}>
-              Password
+              Укажите время
               <input
                 name="time"
                 type="time"
@@ -112,7 +112,7 @@ export default function Order() {
           <div className="text-center" value={inputs.price} onChange={(e) => changeHandler(e)}>
             К оплате:
             {' '}
-            {money}
+            <span className="fs-4   mt-2 mb-2" style={{ backgroundColor: 'yellow' }}>{money}</span>
             {' '}
             руб
           </div>

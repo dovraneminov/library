@@ -74,6 +74,7 @@ export default function InfoCard() {
                   rowGap: '20px',
                 }}
               >
+                <button onClick={() => navigate(-1)} type="button" className="btn btn-outline-warning">В избранное</button>
                 <button onClick={() => navigate(-1)} type="button" className="btn btn-outline-warning">Вернуться назад</button>
                 <button onClick={() => openAuthor()} type="button" className="btn btn-outline-warning">Подробнее об авторе</button>
                 <button onClick={() => openOrder()} type="button" className="btn btn-outline-warning">Подробнее об авторе</button>

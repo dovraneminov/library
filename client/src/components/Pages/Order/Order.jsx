@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import { orderAction } from '../../../redux/reducers/orderSlice';
+import { nullOrder, orderAction } from '../../../redux/reducers/orderSlice';
+import { nullMoney } from '../../../redux/reducers/priceSlice';
 // import { totalPrice } from '../../../redux/reducers/priceSlice';
 import Footer from '../../UI/Footer/Footer';
 
@@ -29,7 +30,10 @@ export default function Order() {
 
   const submit = () => {
     dispatch(orderAction(inputs));
+    dispatch(nullMoney());
+    dispatch(nullOrder());
     navigate('/paiment');
+
   };
 
   console.log(inputs);

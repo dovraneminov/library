@@ -6,8 +6,9 @@ export const priceSlice = createSlice({
   reducers: {
     plusOrder: (state, action) => state + action.payload,
     totalPrice: (state, action) => action.payload,
+    nullMoney: (state, action) => 0,
   },
 });
-export const { plusOrder, totalPrice } = priceSlice.actions;
+export const { plusOrder, totalPrice, nullMoney } = priceSlice.actions;
 
 export default priceSlice.reducer;

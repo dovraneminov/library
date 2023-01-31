@@ -13,7 +13,7 @@ export default function Favorite() {
 
   console.log(favorite);
   return (
-    <div>
+    <div className="row d-flex justify-content">
       {favorite?.map((fav) => <OneFavorite fav={fav} key={fav.id} />)}
 
     </div>

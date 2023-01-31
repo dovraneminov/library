@@ -3,8 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate, useParams } from 'react-router-dom';
 import { setAuthor } from '../../../redux/reducers/authorSlice';
 import { booksesAction, setBookses } from '../../../redux/reducers/booksesSlice';
-import { infoAction } from '../../../redux/reducers/infoSlice';
-import { setInfo } from '../../../redux/reducers/infoSlice';
+import { infoAction, setInfo } from '../../../redux/reducers/infoSlice';
 import { addOrder } from '../../../redux/reducers/orderSlice';
 import { plusOrder } from '../../../redux/reducers/priceSlice';
 import Footer from '../Footer/Footer';
@@ -29,7 +28,7 @@ export default function InfoCard() {
   useEffect(() => {
     dispatch(infoAction(id));
   }, []);
-  
+
   function openOrder() {
     dispatch(plusOrder(info.price));
     dispatch(addOrder(info));
@@ -83,7 +82,7 @@ export default function InfoCard() {
                 <button onClick={() => navigate(-1)} type="button" className="btn btn-outline-warning">В избранное</button>
                 <button onClick={() => navigate(-1)} type="button" className="btn btn-outline-warning">Вернуться назад</button>
                 <button onClick={() => openAuthor()} type="button" className="btn btn-outline-warning">Подробнее об авторе</button>
-                <button onClick={() => openOrder()} type="button" className="btn btn-outline-warning">Подробнее об авторе</button>
+                <button onClick={() => openOrder()} type="button" className="btn btn-outline-warning">Арендовать</button>
               </div>
             </div>
           </div>

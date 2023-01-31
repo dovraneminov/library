@@ -1,19 +1,26 @@
 const express = require('express');
 const {
-  Book, Author, Genre, Favorite,
+  Favorite, User, Book, Author, Genre,
 } = require('../db/models');
 
 const router = express.Router();
 
 router.get('/', async (req, res) => {
-  const allFavorite = await Favorite.findAll({ where: { userId: req.session.user.id } });
+  const allFavorite = await Favorite.findAll({
+    where: { userId: req.session.user.id },
+    include: [{ model: Book, include: [Author, Genre] }, User],
+  });
   res.json(allFavorite);
 });
 
-router.post('/add', async (req, res) => {
-  const { bookId } = req.body;
-  const newFavorite = await Favorite.create({ userId: req.session.user.id, bookId });
-  res.json(newFavorite);
+router.post('/add/:id', async (req, res) => {
+  const { id } = req.params;
+  try {
+    const newFavorite = await Favorite.create({ userId: req.session.user.id, bookId: id });
+    res.json(newFavorite);
+  } catch (e) {
+    console.log(e);
+  }
 });
 
 router.delete('/delete/:id', async (req, res) => {

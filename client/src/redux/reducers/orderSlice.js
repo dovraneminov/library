@@ -7,9 +7,10 @@ export const orderSlice = createSlice({
   reducers: {
     setOrder: (state, action) => action.payload,
     addOrder: (state, action) => [...state, action.payload],
+    nullOrder: (state, action) => [],
   },
 });
-export const { setOrder, addOrder } = orderSlice.actions;
+export const { setOrder, addOrder, nullOrder } = orderSlice.actions;
 
 export const orderAction = (inputs) => (dispatch) => {
   axios.post('http://localhost:3001/order/add', inputs).then((res) => dispatch(setOrder(res.data)));

@@ -13,6 +13,7 @@ export default function BooksMain({ book }) {
     navigate(`/books/info/${book?.id}`);
   }
   return (
+
     <div className="card border border-0 mb-3" style={{ width: '18rem' }}>
       <img onClick={() => openInfo()} src={book.photo} className="card-img-top rounded" alt="..." style={{ boxShadow: '1px 0px 5px grey' }} />
       <div className="card-body p-0">

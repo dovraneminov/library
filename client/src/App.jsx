@@ -21,6 +21,7 @@ import Entry from './components/Pages/Entry';
 import PersonalArea from './components/Pages/PersonalArea/PersonalArea';
 import Mainpage from './components/Pages/Mainpage/Mainpage';
 import MyPaiment from './components/Pages/MyPaiment/MyPaiment';
+import MyScroll from './components/Pages/Mainpage/UI/MyScroll/MyScroll';
 
 function App() {
   const dispatch = useDispatch();
@@ -33,6 +34,7 @@ function App() {
       <Routes>
         <Route path="/" element={(<Navigate to="/main" />)} />
         <Route path="/main" element={<Mainpage />} />
+        <Route path="/scroll" element={<MyScroll />} />
         <Route path="/paiment" element={<MyPaiment />} />
         <Route path="/onepopular/:id" element={<OnePopularBook />} />
         <Route path="/genre" element={<Genres />} />

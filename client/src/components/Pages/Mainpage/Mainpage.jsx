@@ -3,7 +3,7 @@ import { Link, NavLink } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import './Mainpage.css';
 import { MdArrowForwardIos } from 'react-icons/md';
-import MyPopular from './UI/MyPopular/MyPopular';
+// import MyPopular from './UI/MyPopular/MyPopular';
 import MyPublisher from './UI/MyPublishers/MyPublisher';
 import MySlide from './UI/MySlide/MySlide';
 import { getPersonsAction } from '../../../redux/popularSlice';
@@ -13,8 +13,8 @@ import { getBooksAction } from '../../../redux/bookSlice';
 import Footer from '../../UI/Footer/Footer';
 import BooksMain from '../../UI/BooksMain/BooksMain';
 import HeaderMyBook from '../../UI/HeaderMyBook/HeaderMyBook';
+import NewPopularCard from '../../UI/NewPopularCard/NewPopularCard';
 // import Footer from '../../UI/Footer/footer';
-
 export default function Mainpage() {
   const dispatch = useDispatch();
   useEffect(() => { dispatch(getPersonsAction()); }, []);
@@ -37,7 +37,7 @@ export default function Mainpage() {
 
       <div className="row mt-3 d-flex justify-content-around ">
         {popular?.map((el) => (
-          <MyPopular key={el.id} el={el} />
+          <NewPopularCard key={el.id} el={el} />
         ))}
       </div>
 
@@ -45,12 +45,17 @@ export default function Mainpage() {
         Книги
         <MdArrowForwardIos />
       </Link>
-      <div className="row mt-3 d-flex justify-content-around">
-        {myBooks?.slice(0, 4).map((el) => (
+      <div
+        className="row mt-3 d-flex justify-content-around"
+        style={{
+          flexWrap: 'nowrap',
+          overflowX: 'scroll',
+        }}
+      >
+        {myBooks?.map((el) => (
           <BooksMain book={el} key={el.id} />
         ))}
       </div>
-
       <NavLink className="forLink">
 
         Авторы

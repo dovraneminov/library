@@ -10,10 +10,6 @@ router.get('/getpopular', async (req, res) => {
   res.json(popular);
 });
 
-router.get('/publisher', async (req, res) => {
-  const popular = await Author.findAll();
-  res.json(popular);
-});
 
 router.get('/getbooks', async (req, res) => {
   const books = await Book.findAll({ include: [Author, Genre] });

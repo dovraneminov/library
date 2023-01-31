@@ -14,4 +14,10 @@ router.get('/info/:id', async (req, res) => {
   res.json(oneBook);
 });
 
+router.get('/author/:id', async (req, res) => {
+  const { id } = req.params;
+  const author = await Book.findOne({ where: { id: authorId }, include: [Author, Genre] });
+  res.json(author);
+});
+
 module.exports = router;

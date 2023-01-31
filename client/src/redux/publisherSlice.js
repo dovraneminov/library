@@ -12,7 +12,7 @@ const publisherSlice = createSlice({
 export const { getPublisher } = publisherSlice.actions;
 
 export const getPublisherAction = () => (dispatch) => {
-  axios.get('http://localhost:3001/main/publisher')
+  axios.get('http://localhost:3001/publisher')
     .then((res) => {
       dispatch(getPublisher(res.data));
     });

@@ -21,6 +21,7 @@ import Entry from './components/Pages/Entry';
 import PersonalArea from './components/Pages/PersonalArea/PersonalArea';
 import Mainpage from './components/Pages/Mainpage/Mainpage';
 import MyPaiment from './components/Pages/MyPaiment/MyPaiment';
+import AuthorInfo from './components/UI/AuthorInfo/AuthorInfo';
 
 function App() {
   const dispatch = useDispatch();
@@ -37,7 +38,7 @@ function App() {
         <Route path="/onepopular/:id" element={<OnePopularBook />} />
         <Route path="/genre" element={<Genres />} />
         <Route path="/popular" element={<Popular />} />
-        <Route path="/author" element={<Author />} />
+        <Route path="/publisher" element={<Author />} />
         <Route path="/basket" element={<Basket />} />
         <Route path="/client" element={<ClientsPage />} />
         <Route path="/mybook" element={<Mybook />} />
@@ -47,9 +48,10 @@ function App() {
         <Route path="/entry" element={<Entry />} />
         <Route path="/books" element={<Books />} />
         <Route path="/books/info/:id" element={<InfoCard />} />
-        <Route path="/author/:id" element={<AuthorCard />} />
+        <Route path="/books/author/:id" element={<AuthorCard />} />
         <Route path="/order" element={<Order />} />
         <Route path="/cabinet" element={<PersonalArea />} />
+        <Route path="/publisher/:id" element={<AuthorInfo />} />
       </Routes>
     </>
 

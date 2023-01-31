@@ -10,7 +10,7 @@ export default function InfoCard() {
 
   function openAuthor() {
     dispatch(setAuthor(info));
-    navigate(`/author/${info?.id}`);
+    navigate(`/books/author/${info?.id}`);
   }
 
   return (

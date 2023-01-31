@@ -11,6 +11,7 @@ import orderReducer from './reducers/orderSlice';
 // import booksesReducer from './reducers/booksesSlice';
 import priceReducer from './reducers/priceSlice';
 import personalAreaReducer from './reducers/personalAreaSlice';
+import authorInfoReducer from './reducers/authorInfoSlice';
 // import onePopularSlice from './onePopularSlice';
 
 const store = configureStore({
@@ -28,6 +29,7 @@ const store = configureStore({
     order: orderReducer,
     price: priceReducer,
     cabinet: personalAreaReducer,
+    authorInfo: authorInfoReducer,
   },
 });
 

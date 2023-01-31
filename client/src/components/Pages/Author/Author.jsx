@@ -8,6 +8,7 @@ export default function Author() {
   useEffect(() => { dispatch(getPersonsAction()); }, []);
 
   const publisher = useSelector((store) => store.publisher);
+  console.log('publisher', publisher);
   return (
     <div>
       {' '}

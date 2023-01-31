@@ -9,7 +9,6 @@ import MySlide from './UI/MySlide/MySlide';
 import { getPersonsAction } from '../../../redux/popularSlice';
 import { getPublisherAction } from '../../../redux/publisherSlice';
 import { getBooksAction } from '../../../redux/bookSlice';
-import OneBook from '../../UI/OneBook/OneBook';
 import MyList from '../MyList';
 import Footer from '../../UI/Footer/Footer';
 import BooksMain from '../../UI/BooksMain/BooksMain';
@@ -26,7 +25,7 @@ export default function Mainpage() {
 
   return (
     <>
-       <MyList />
+      <MyList />
       <HeaderMyBook />
       <MySlide />
 

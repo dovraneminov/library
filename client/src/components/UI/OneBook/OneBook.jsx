@@ -11,7 +11,6 @@ export default function OneBook({ book }) {
 
   function openInfo() {
     dispatch(setInfo(book));
-    console.log(book);
     navigate(`/books/info/${book?.id}`);
   }
 
@@ -20,6 +19,8 @@ export default function OneBook({ book }) {
     dispatch(addOrder(book));
     navigate('/order');
   }
+
+  
 
   return (
     <div className="card m-2 p-0 border border-0" style={{ width: '18rem', boxShadow: '1px 0px 5px grey' }}>

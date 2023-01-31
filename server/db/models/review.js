@@ -13,7 +13,6 @@ module.exports = (sequelize, DataTypes) => {
       this.belongsTo(models.User, { foreignKey: 'userId' });
       this.belongsTo(models.Book, { foreignKey: 'bookId' });
       this.belongsTo(models.Popular, { foreignKey: 'popularId' });
-      this.belongsTo(models.MyBook, { foreignKey: 'myBookId' });
     }
   }
   Review.init({
@@ -22,7 +21,6 @@ module.exports = (sequelize, DataTypes) => {
     userId: DataTypes.INTEGER,
     bookId: DataTypes.INTEGER,
     popularId: DataTypes.INTEGER,
-    myBookId: DataTypes.INTEGER,
   }, {
     sequelize,
     modelName: 'Review',

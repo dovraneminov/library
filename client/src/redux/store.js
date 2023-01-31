@@ -1,13 +1,16 @@
 import { configureStore } from '@reduxjs/toolkit';
-
 import userReducer from './reducers/userReducer';
 import popularSlice from './popularSlice';
 import publisherSlice from './publisherSlice';
 import bookSlice from './bookSlice';
-import booksReducer from './reducers/booksReducer';
 import infoReducer from './reducers/infoSlice';
 import authorReducer from './reducers/authorSlice';
 import inputSlice from './inputSlice';
+import booksesReducer from './reducers/booksesSlice';
+import orderReducer from './reducers/orderSlice';
+import priceReducer from './reducers/priceSlice';
+import personalAreaReducer from './reducers/personalAreaSlice';
+import authorInfoReducer from './reducers/authorInfoSlice';
 
 const store = configureStore({
   reducer: {
@@ -15,11 +18,15 @@ const store = configureStore({
     persons: popularSlice,
     publisher: publisherSlice,
     myBooks: bookSlice,
-    books: booksReducer,
-    // bookses: booksesReducer,
     info: infoReducer,
     author: authorReducer,
     input: inputSlice,
+    bookses: booksesReducer,
+    books: bookSlice,
+    order: orderReducer,
+    price: priceReducer,
+    cabinet: personalAreaReducer,
+    authorInfo: authorInfoReducer,
   },
 });
 

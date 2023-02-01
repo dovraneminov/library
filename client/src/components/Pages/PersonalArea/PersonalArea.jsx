@@ -14,7 +14,7 @@ export default function PersonalArea() {
 
   return (
     <div className="" style={{ backgroundImage: 'url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRASDgsM0jPuHIQFJ8hjbo8N9TrYqKQ1SGpeQ&usqp=CAU)', backgroundSize: '100%' }}>
-      <h2 className="mt-3 text-center text-white fw-bold">
+      <h2 className="pt-3 text-center text-white fw-bold">
         {user?.name}
         {' '}
         , Привет!

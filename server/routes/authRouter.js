@@ -1,6 +1,7 @@
 const express = require('express');
 const bcrypt = require('bcrypt');
 const { User } = require('../db/models');
+const mailer = require('../nodemailer');
 
 const router = express.Router();
 
@@ -21,6 +22,14 @@ router.post('/signup', async (req, res) => {
     if (!isExist) return res.status(401).json({ message: 'Пользователь уже существует' });
     const sessionUser = JSON.parse(JSON.stringify(newUser));
     delete sessionUser.password;
+    const message = {
+      from: 'Mailer test <test.tester.test@internet.ru>',
+      to: req.body.email,
+      subject: 'Message from Node js',
+      text: 'This message was sent from Node js server.',
+    };
+    mailer(message);
+
     req.session.user = sessionUser;
     return res.json(sessionUser);
   } catch (err) {

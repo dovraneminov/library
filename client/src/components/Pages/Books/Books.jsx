@@ -12,7 +12,7 @@ export default function Books() {
   }, []);
 
   return (
-    <div>
+    <div className="row d-flex justify-content-evenly" style={{ backgroundColor: 'rgba(245, 245, 245, 1)' }}>
       {bookses?.map((book) => (<OneBook book={book} key={book.id} />))}
     </div>
   );

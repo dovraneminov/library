@@ -8,12 +8,14 @@ import { Carousel } from 'react-bootstrap';
 import MyPublisher from './UI/MyPublishers/MyPublisher';
 import MySlide from './UI/MySlide/MySlide';
 import { getPersonsAction } from '../../../redux/popularSlice';
-import { getPublisherChunksAction } from '../../../redux/publisherSlice';
+import { getPublisherChunksAction, getPublisherAction } from '../../../redux/publisherSlice';
 import Footer from '../../UI/Footer/Footer';
 import BooksMain from '../../UI/BooksMain/BooksMain';
 import HeaderMyBook from '../../UI/HeaderMyBook/HeaderMyBook';
 import NewPopularCard from '../../UI/NewPopularCard/NewPopularCard';
-import { getBooksChunksAction } from '../../../redux/bookSlice';
+import { getBooksChunksAction, getBooksAction } from '../../../redux/bookSlice';
+import OneBook from '../../UI/OneBook/OneBook';
+import MyList from '../MyList';
 
 export default function Mainpage() {
   const dispatch = useDispatch();
@@ -26,6 +28,7 @@ export default function Mainpage() {
   console.log(publisher);
   return (
     <>
+      <MyList />
       <HeaderMyBook />
       <MySlide />
 

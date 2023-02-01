@@ -21,7 +21,7 @@ export default function Order() {
   };
   // const obj = { ...inputs, price };
   // dispatch(setOrder(obj));
-  const money = ((prices * 2 + Number(inputs.days * 40)) / 2);
+  const money = (prices * 2 + Number(inputs.days * 20));
 
   useEffect(() => {
     setInputs((prev) => ({ ...prev, price: money }));

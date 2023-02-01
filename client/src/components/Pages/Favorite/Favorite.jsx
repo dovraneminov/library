@@ -11,9 +11,8 @@ export default function Favorite() {
     dispatch(favoriteAction());
   }, []);
 
-  console.log(favorite);
   return (
-    <div className="row d-flex justify-content">
+    <div className="row d-flex justify-content" style={{ backgroundColor: 'rgb(238 236 245)' }}>
       {favorite?.map((fav) => <OneFavorite fav={fav} key={fav.id} />)}
 
     </div>

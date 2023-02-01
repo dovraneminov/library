@@ -29,8 +29,8 @@ export default function OneFavorite({ fav }) {
             paddingBottom: '15px',
           }}
         >
-          <div className="card-body">
-            <h5 className="card-title text-center fs-2 pb-4">{fav?.title}</h5>
+          <div className="card-body mt-0">
+            <h5 className="card-title p-0 m-0 text-center fs-2 pb-4">{fav?.title}</h5>
             <p className="card-text fs-6">
               <span className="fw-bold fs-5"> Жанр: </span>
               {fav?.Book?.Genre?.genre}
@@ -56,7 +56,7 @@ export default function OneFavorite({ fav }) {
               rowGap: '20px',
             }}
           >
-            <button onClick={() => deleter()} type="button" className="btn btn-outline-warning">Убрать</button>
+            <button onClick={() => deleter()} type="button" className="btn btn-outline-danger">Убрать</button>
           </div>
         </div>
       </div>

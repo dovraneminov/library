@@ -12,7 +12,7 @@ export default function Popular() {
     <div>
       {' '}
       {popular?.map((el) => (
-        <div className="genres">
+        <div className="d-flex justify-content-evenly">
           <MyPopular key={el.id} el={el} />
         </div>
       ))}

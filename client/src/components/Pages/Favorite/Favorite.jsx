@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { favoriteAction } from '../../../redux/reducers/favoriteSlice';
 import OneFavorite from '../../UI/OneFavorite/OneFavorite';
+import './favorite.css';
 
 export default function Favorite() {
   const dispatch = useDispatch();
@@ -11,9 +12,8 @@ export default function Favorite() {
     dispatch(favoriteAction());
   }, []);
 
-  console.log(favorite);
   return (
-    <div className="row d-flex justify-content">
+    <div className="row d-flex justify-content" style={{ backgroundColor: 'rgb(238 236 245)' }}>
       {favorite?.map((fav) => <OneFavorite fav={fav} key={fav.id} />)}
 
     </div>

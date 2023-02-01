@@ -5,6 +5,8 @@ import { useNavigate } from 'react-router-dom';
 export default function AuthorCard() {
   const navigate = useNavigate();
   const author = useSelector((store) => store.author);
+  console.log(author);
+  if (!author) return null;
 
   return (
     <div className="card" style={{ width: '18rem' }}>

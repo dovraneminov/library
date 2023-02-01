@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { Link, NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import './Mainpage.css';
 import { MdArrowForwardIos } from 'react-icons/md';
@@ -8,13 +8,13 @@ import { Carousel } from 'react-bootstrap';
 import MyPublisher from './UI/MyPublishers/MyPublisher';
 import MySlide from './UI/MySlide/MySlide';
 import { getPersonsAction } from '../../../redux/popularSlice';
-import { getPublisherChunksAction, getPublisherAction } from '../../../redux/publisherSlice';
+import { getPublisherChunksAction } from '../../../redux/publisherSlice';
 import Footer from '../../UI/Footer/Footer';
 import BooksMain from '../../UI/BooksMain/BooksMain';
 import HeaderMyBook from '../../UI/HeaderMyBook/HeaderMyBook';
 import NewPopularCard from '../../UI/NewPopularCard/NewPopularCard';
 import { getBooksChunksAction, getBooksAction } from '../../../redux/bookSlice';
-import OneBook from '../../UI/OneBook/OneBook';
+// import OneBook from '../../UI/OneBook/OneBook';
 import MyList from '../MyList';
 
 export default function Mainpage() {
@@ -29,19 +29,6 @@ export default function Mainpage() {
     <>
       <MyList />
       <HeaderMyBook />
-      <MySlide />
-
-      <Link to="/popular" className="forLink">
-
-        Популярное
-        <MdArrowForwardIos />
-      </Link>
-
-      <div className="row mt-3 d-flex justify-content-around ">
-        {popular?.map((el) => (
-          <NewPopularCard key={el.id} el={el} />
-        ))}
-      </div>
 
       <Link to="/books" className="forLink">
         Книги
@@ -59,6 +46,21 @@ export default function Mainpage() {
           </Carousel.Item>
         ))}
       </Carousel>
+
+      <Link to="/popular" className="forLink">
+
+        Популярное
+        <MdArrowForwardIos />
+      </Link>
+
+      <div className="row mt-3 d-flex justify-content-around ">
+        {popular?.map((el) => (
+          <NewPopularCard key={el.id} el={el} />
+        ))}
+      </div>
+
+      <MySlide />
+
       <Link className="forLink" to="/publisher">
         Авторы
         <MdArrowForwardIos />

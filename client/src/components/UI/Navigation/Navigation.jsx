@@ -20,10 +20,7 @@ export default function Navigation() {
               <Link className="nav-link text-dark" to="/publisher">Авторы</Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link text-dark" to="/mybook">Моя Книга</Link>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link text-dark" to="/basket">Корзина</Link>
+              <Link className="nav-link text-dark" to="/favorite">Избранное</Link>
             </li>
             <li className="nav-item">
               <Link className="nav-link text-dark" to="/cabinet">Личный кабинет</Link>
@@ -39,10 +36,10 @@ export default function Navigation() {
               <Link className="nav-link text-dark" to="/popular">Популярное</Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link text-dark" to="/author">Авторы</Link>
+              <Link className="nav-link text-dark" to="/publisher">Авторы</Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link text-dark" to="/mybook">Моя Книга</Link>
+              <Link className="nav-link text-dark" to="/mybook">Library</Link>
             </li>
           </ul>
         )}

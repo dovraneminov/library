@@ -14,7 +14,6 @@ export const { getPopular } = onePopularSlice.actions;
 export const getPopularAction = () => (dispatch) => {
   axios.get('http://localhost:3001/main/onepopular/:id')
     .then((res) => {
-      console.log('tut');
       dispatch(getPopular(res.data));
     });
 };

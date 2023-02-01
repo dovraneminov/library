@@ -19,10 +19,12 @@ import Comics from './components/Pages/Comics/Comics';
 import OnePopularBook from './components/Pages/Mainpage/UI/OnePopularBook/OnePopularBook';
 import Entry from './components/Pages/Entry';
 import PersonalArea from './components/Pages/PersonalArea/PersonalArea';
-import Mainpage from './components/Pages/Mainpage/Mainpage';
 import MyPaiment from './components/Pages/MyPaiment/MyPaiment';
 import AuthorInfo from './components/UI/AuthorInfo/AuthorInfo';
 import Pay from './components/UI/Pay';
+import Favorite from './components/Pages/Favorite/Favorite';
+import MyScroll from './components/Pages/Mainpage/UI/MyScroll/MyScroll';
+import Mainpage from './components/Pages/Mainpage/Mainpage';
 
 function App() {
   const dispatch = useDispatch();
@@ -35,6 +37,7 @@ function App() {
       <Routes>
         <Route path="/" element={(<Navigate to="/main" />)} />
         <Route path="/main" element={<Mainpage />} />
+        <Route path="/scroll" element={<MyScroll />} />
         <Route path="/paiment" element={<MyPaiment />} />
         <Route path="/onepopular/:id" element={<OnePopularBook />} />
         <Route path="/genre" element={<Genres />} />
@@ -54,6 +57,7 @@ function App() {
         <Route path="/cabinet" element={<PersonalArea />} />
         <Route path="/publisher/:id" element={<AuthorInfo />} />
         <Route path="/pay" element={<Pay />} />
+        <Route path="/favorite" element={<Favorite />} />
       </Routes>
     </>
 

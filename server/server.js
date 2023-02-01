@@ -12,6 +12,7 @@ const authorsRouter = require('./routes/authorsRouter');
 const orderRouter = require('./routes/orderRouter');
 const personalAreaRouter = require('./routes/personalAreaRouter');
 const mailerRouter = require('./routes/mailerRouter');
+const favoriteRouter = require('./routes/favoriteRouter');
 
 require('dotenv').config();
 
@@ -49,5 +50,6 @@ app.use('/publisher', authorsRouter);
 app.use('/order', orderRouter);
 app.use('/cabinet', personalAreaRouter);
 app.use('/mailer', mailerRouter);
+app.use('/favorite', favoriteRouter);
 
 app.listen(PORT, () => console.log(`App has started on port ${PORT}`));

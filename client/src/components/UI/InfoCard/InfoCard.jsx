@@ -3,8 +3,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate, useParams } from 'react-router-dom';
 import { setAuthor } from '../../../redux/reducers/authorSlice';
 // import { booksesAction, setBookses } from '../../../redux/reducers/booksesSlice';
+import { favoriteAddAction } from '../../../redux/reducers/favoriteSlice';
 import { infoAction } from '../../../redux/reducers/infoSlice';
-// import { setInfo } from '../../../redux/reducers/infoSlice';
 import { addOrder } from '../../../redux/reducers/orderSlice';
 import { plusOrder } from '../../../redux/reducers/priceSlice';
 import Footer from '../Footer/Footer';
@@ -36,6 +36,12 @@ export default function InfoCard() {
     navigate('/order');
   }
 
+  function openFavorite() {
+    dispatch(favoriteAddAction(id));
+    navigate('/favorite');
+  }
+
+  console.log(info);
   return (
     <>
       <div className="d-flex justify-content-evenly" style={{ backgroundColor: 'rgba(245, 245, 245, 1)' }}>
@@ -80,10 +86,10 @@ export default function InfoCard() {
                   rowGap: '20px',
                 }}
               >
-                <button onClick={() => navigate(-1)} type="button" className="btn btn-outline-warning">В избранное</button>
+                <button onClick={() => openFavorite()} type="button" className="btn btn-outline-warning">В избранное</button>
                 <button onClick={() => navigate(-1)} type="button" className="btn btn-outline-warning">Вернуться назад</button>
                 <button onClick={() => openAuthor()} type="button" className="btn btn-outline-warning">Подробнее об авторе</button>
-                <button onClick={() => openOrder()} type="button" className="btn btn-outline-warning">Подробнее об авторе</button>
+                <button onClick={() => openOrder()} type="button" className="btn btn-outline-warning">Арендовать</button>
               </div>
             </div>
           </div>

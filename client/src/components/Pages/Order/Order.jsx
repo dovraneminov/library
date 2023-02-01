@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import { orderAction } from '../../../redux/reducers/orderSlice';
+import { nullOrder, orderAction } from '../../../redux/reducers/orderSlice';
+import { nullMoney } from '../../../redux/reducers/priceSlice';
 // import { totalPrice } from '../../../redux/reducers/priceSlice';
 import Footer from '../../UI/Footer/Footer';
 
@@ -21,7 +22,7 @@ export default function Order() {
   };
   // const obj = { ...inputs, price };
   // dispatch(setOrder(obj));
-  const money = ((prices * 2 + Number(inputs.days * 40)) / 2);
+  const money = (prices * 2 + Number(inputs.days * 20));
 
   useEffect(() => {
     setInputs((prev) => ({ ...prev, price: money }));
@@ -29,10 +30,11 @@ export default function Order() {
 
   const submit = () => {
     dispatch(orderAction(inputs));
+    dispatch(nullMoney());
+    dispatch(nullOrder());
     navigate('/paiment');
   };
 
-  console.log(inputs);
   return (
     <>
       <div className="mt-9 d-flex align-items-center" style={{ backgroundImage: 'url(https://static.vecteezy.com/system/resources/previews/002/381/365/original/yellow-wave-background-free-vector.jpg)', backgroundSize: '100%', minHeight: '1000px' }}>
@@ -70,7 +72,7 @@ export default function Order() {
           </div>
           <div className="mx-auto mb-3">
             <label htmlFor="exampleInputPassword1" className="form-label" style={{ width: '300px' }}>
-              Password
+              Дата доставки
               <input
                 name="date"
                 type="date"
@@ -84,7 +86,7 @@ export default function Order() {
           </div>
           <div className="mx-auto mb-3">
             <label htmlFor="exampleInputPassword1" className="form-label" style={{ width: '300px' }}>
-              Password
+              Укажите время
               <input
                 name="time"
                 type="time"
@@ -108,7 +110,7 @@ export default function Order() {
           <div className="text-center" value={inputs.price} onChange={(e) => changeHandler(e)}>
             К оплате:
             {' '}
-            {money}
+            <span className="fs-4   mt-2 mb-2" style={{ backgroundColor: 'yellow' }}>{money}</span>
             {' '}
             руб
           </div>

@@ -10,35 +10,41 @@ export default function OneOrder({ order }) {
   };
 
   return (
-    <div className="card" style={{ width: '18rem' }}>
+    <div className="card m-2 border border-0" style={{ width: '18rem', boxShadow: '1px 1px 5px grey' }}>
       <div className="card-body">
-        <h5 className="card-title">
+        <h5 className="card-title text-center">
           Заказ №
           {' '}
           {order.id}
         </h5>
         <p className="card-text">
           {' '}
-          Книга:
+          <span className="fs-5">Книга: </span>
           {' '}
           {order?.Book?.title}
         </p>
         <p className="card-text">
-          Адрес:
+          <span className="fs-5">Адрес: </span>
+          <br />
           {order.adress}
         </p>
         <p className="card-text">
-          Дата получения:
+          <span className="fs-5">Дата получения: </span>
+          <br />
           {order.date.toString().slice(0, -14)}
         </p>
         <p className="card-text">
-          Время получения:
+          <span className="fs-5">Время получения: </span>
+          <br />
           {order.time}
         </p>
         <p className="card-text">
-          Сумма заказа:
+          <span className="fs-5">Сумма заказа: </span>
+          <br />
           {' '}
           {order.price}
+          {' '}
+          руб
         </p>
         <p className="card-text">
           Аренда на
@@ -47,8 +53,8 @@ export default function OneOrder({ order }) {
           {' '}
           дней
         </p>
-        <button onClick={() => deleter()} type="button" className="card-link">Delete order</button>
       </div>
+      <button onClick={() => deleter()} type="button" className="btn btn-danger m-2  text-center">Отмена</button>
     </div>
   );
 }

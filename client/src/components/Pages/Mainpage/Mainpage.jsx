@@ -1,28 +1,30 @@
 import React, { useEffect } from 'react';
-import { Link, NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import './Mainpage.css';
 import { MdArrowForwardIos } from 'react-icons/md';
-import MyPopular from './UI/MyPopular/MyPopular';
+// import MyPopular from './UI/MyPopular/MyPopular';
+import { Carousel } from 'react-bootstrap';
 import MyPublisher from './UI/MyPublishers/MyPublisher';
 import MySlide from './UI/MySlide/MySlide';
 import { getPersonsAction } from '../../../redux/popularSlice';
-import { getPublisherAction } from '../../../redux/publisherSlice';
-import { getBooksAction } from '../../../redux/bookSlice';
-import MyList from '../MyList';
+import { getPublisherChunksAction } from '../../../redux/publisherSlice';
 import Footer from '../../UI/Footer/Footer';
 import BooksMain from '../../UI/BooksMain/BooksMain';
 import HeaderMyBook from '../../UI/HeaderMyBook/HeaderMyBook';
+import NewPopularCard from '../../UI/NewPopularCard/NewPopularCard';
+import { getBooksChunksAction, getBooksAction } from '../../../redux/bookSlice';
+// import OneBook from '../../UI/OneBook/OneBook';
+import MyList from '../MyList';
 
 export default function Mainpage() {
   const dispatch = useDispatch();
   useEffect(() => { dispatch(getPersonsAction()); }, []);
-  useEffect(() => { dispatch(getPublisherAction()); }, []);
-  useEffect(() => { dispatch(getBooksAction()); }, []);
+  useEffect(() => { dispatch(getPublisherChunksAction()); }, []);
+  useEffect(() => { dispatch(getBooksChunksAction()); }, []);
   const popular = useSelector((store) => store.persons);
   const publisher = useSelector((store) => store.publisher);
-  const myBooks = useSelector((store) => store.myBooks);
-
+  const books = useSelector((store) => store.myBooks);
   return (
     <>
       <MyList />
@@ -37,7 +39,7 @@ export default function Mainpage() {
 
       <div className="row mt-3 d-flex justify-content-around ">
         {popular?.map((el) => (
-          <MyPopular key={el.id} el={el} />
+          <NewPopularCard key={el.id} el={el} />
         ))}
       </div>
 
@@ -45,23 +47,33 @@ export default function Mainpage() {
         Книги
         <MdArrowForwardIos />
       </Link>
-      <div className="row mt-3 d-flex justify-content-around">
-        {myBooks?.slice(0, 4).map((el) => (
-          <BooksMain book={el} key={el.id} />
+      <Carousel>
+
+        {books?.map((el) => (
+          <Carousel.Item>
+            <div className="row mt-3 d-flex justify-content-around">
+              {el?.map((bookses) => (
+                <BooksMain book={bookses} key={bookses.id} />
+              ))}
+            </div>
+          </Carousel.Item>
         ))}
-      </div>
-
-      <NavLink className="forLink">
-
+      </Carousel>
+      <Link className="forLink" to="/publisher">
         Авторы
         <MdArrowForwardIos />
-      </NavLink>
-      <div className="row mt-3 d-flex justify-content-around">
-        {publisher?.slice(0, 4).map((el) => (
-          <MyPublisher key={el.id} el={el} />
+      </Link>
+      <Carousel>
+        {publisher?.map((el) => (
+          <Carousel.Item>
+            <div className="row mt-3 d-flex justify-content-around">
+              {el?.map((publishers) => (
+                <MyPublisher publishers={publishers} key={publishers.id} />
+              ))}
+            </div>
+          </Carousel.Item>
         ))}
-      </div>
-
+      </Carousel>
       <Footer />
 
     </>

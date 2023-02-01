@@ -12,6 +12,10 @@
     flex-wrap: wrap;
     margin-top: 20px;
 }
+.scrol{
+    flex-wrap: nowrap;
+    overflow-x: scroll;
+}
 
 .text_content{
     text-align: center;

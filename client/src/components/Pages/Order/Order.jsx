@@ -35,7 +35,6 @@ export default function Order() {
     navigate('/paiment');
   };
 
-  console.log(inputs);
   return (
     <>
       <div className="mt-9 d-flex align-items-center" style={{ backgroundImage: 'url(https://static.vecteezy.com/system/resources/previews/002/381/365/original/yellow-wave-background-free-vector.jpg)', backgroundSize: '100%', minHeight: '1000px' }}>

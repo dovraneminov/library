@@ -44,7 +44,14 @@ export default function AuthorInfo() {
 
         <div>
           <h3 className="text-center border border-1 p-0 mb-0 rounded-0 pb-3">Книги Автора</h3>
-          <div className="row">
+          <div
+            className="row"
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              flexWrap: 'initial',
+            }}
+          >
             {authorInfo[0]?.Books?.map((element) => (
               <AuthorBooks
                 element={element}

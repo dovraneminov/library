@@ -2,9 +2,9 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate, useParams } from 'react-router-dom';
 import { setAuthor } from '../../../redux/reducers/authorSlice';
-import { booksesAction, setBookses } from '../../../redux/reducers/booksesSlice';
+// import { booksesAction, setBookses } from '../../../redux/reducers/booksesSlice';
 import { favoriteAddAction } from '../../../redux/reducers/favoriteSlice';
-import { infoAction, setInfo } from '../../../redux/reducers/infoSlice';
+import { infoAction } from '../../../redux/reducers/infoSlice';
 import { addOrder } from '../../../redux/reducers/orderSlice';
 import { plusOrder } from '../../../redux/reducers/priceSlice';
 import Footer from '../Footer/Footer';
@@ -17,9 +17,9 @@ export default function InfoCard() {
   const { id } = useParams();
   const info = useSelector((store) => store.info);
 
-  useEffect(() => {
-    dispatch(setInfo());
-  }, []);
+  // useEffect(() => {
+  //   dispatch(setInfo());
+  // }, []);
 
   function openAuthor() {
     dispatch(setAuthor(info));

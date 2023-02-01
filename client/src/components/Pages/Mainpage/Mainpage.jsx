@@ -25,7 +25,6 @@ export default function Mainpage() {
   const popular = useSelector((store) => store.persons);
   const publisher = useSelector((store) => store.publisher);
   const books = useSelector((store) => store.myBooks);
-  console.log(publisher);
   return (
     <>
       <MyList />

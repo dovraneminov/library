@@ -2,8 +2,8 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { setInfo } from '../../../redux/reducers/infoSlice';
-import { addOrder } from '../../../redux/reducers/orderSlice';
-import { plusOrder } from '../../../redux/reducers/priceSlice';
+import { addOrder, nullOrder } from '../../../redux/reducers/orderSlice';
+import { nullMoney, plusOrder } from '../../../redux/reducers/priceSlice';
 
 export default function OneBook({ book }) {
   const dispatch = useDispatch();
@@ -15,6 +15,8 @@ export default function OneBook({ book }) {
   }
 
   function openOrder() {
+    dispatch(nullMoney());
+    dispatch(nullOrder());
     dispatch(plusOrder(book.price));
     dispatch(addOrder(book));
     navigate('/order');

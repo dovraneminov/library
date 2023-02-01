@@ -52,11 +52,11 @@ export default function Mainpage() {
         ))}
       </div>
 
-      <NavLink className="forLink">
+      <Link className="forLink" to="/publisher">
 
         Авторы
         <MdArrowForwardIos />
-      </NavLink>
+      </Link>
       <div className="row mt-3 d-flex justify-content-around">
         {publisher?.slice(0, 4).map((el) => (
           <MyPublisher key={el.id} el={el} />

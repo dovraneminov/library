@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
 import Cards from 'react-credit-cards';
 import './style.scss';
+import { useNavigate } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
 import AnimatedPage from '../../UI/AnimatedPage/AnimatedPage';
+import setMailer from '../../../redux/actions/mailerAction';
 
 export default function MyPaiment() {
   const [number, setNumber] = useState('');
@@ -9,6 +12,13 @@ export default function MyPaiment() {
   const [expiry, setExpiry] = useState('');
   const [cvc, setCvc] = useState('');
   const [focus, setFocus] = useState('');
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const user = useSelector((store) => store.user);
+  const clickHandler = () => {
+    dispatch(setMailer(user));
+    navigate('/pay');
+  };
 
   return (
     <AnimatedPage>
@@ -58,7 +68,24 @@ export default function MyPaiment() {
               className="pocket-form__input"
               required
             />
-            <button className="pocket-form__btn" type="submit">Update</button>
+            {/* <Form
+              className="pocket-form__btn"
+              type="submit"
+              onSubmit={() => {
+                navigate('/pay');
+              }}
+            >
+              Update
+
+            </Form> */}
+            <button
+              onClick={clickHandler}
+              className="pocket-form__btn"
+              type="button"
+            >
+              Update
+
+            </button>
           </form>
         </div>
       </div>

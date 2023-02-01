@@ -49,6 +49,7 @@ export default function Mainpage() {
         <MdArrowForwardIos />
       </Link>
       <Carousel>
+      
         {books?.map((el) => (
           <Carousel.Item>
             <div className="row mt-3 d-flex justify-content-around">
@@ -59,11 +60,10 @@ export default function Mainpage() {
           </Carousel.Item>
         ))}
       </Carousel>
-
-      <NavLink className="forLink">
+      <Link className="forLink" to="/publisher">
         Авторы
         <MdArrowForwardIos />
-      </NavLink>
+      </Link>
       <Carousel>
         {publisher?.map((el) => (
           <Carousel.Item>

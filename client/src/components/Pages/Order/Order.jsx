@@ -12,9 +12,9 @@ export default function Order() {
   const order = useSelector((store) => store.order);
   const prices = useSelector((store) => store.price);
   const user = useSelector((store) => store.user);
-
+  const [money, setMoney] = useState(prices);
   const [inputs, setInputs] = useState({
-    bookId: order[0]?.id, adress: '', date: '', time: '', price: '', days: '',
+    bookId: order[0]?.id, adress: '', date: '', time: '', price: 0, days: 0,
   });
 
   const changeHandler = (e) => {
@@ -22,11 +22,13 @@ export default function Order() {
   };
   // const obj = { ...inputs, price };
   // dispatch(setOrder(obj));
-  const money = (prices * 2 + Number(inputs.days * 20));
+  // const money = (prices + Number(inputs.days * 20));
 
   useEffect(() => {
-    setInputs((prev) => ({ ...prev, price: money }));
-  }, [money]);
+    // setInputs((prev) => ({ ...prev, price: money }));
+    if (inputs.days > 1) setMoney(prices + Number(inputs.days * 20));
+    else setMoney(prices);
+  }, [inputs.days]);
 
   const submit = () => {
     dispatch(orderAction(inputs));
@@ -35,6 +37,8 @@ export default function Order() {
     navigate('/paiment');
   };
 
+  console.log(inputs);
+  console.log({ money, prices });
   return (
     <>
       <div className="mt-9 d-flex align-items-center" style={{ backgroundImage: 'url(https://static.vecteezy.com/system/resources/previews/002/381/365/original/yellow-wave-background-free-vector.jpg)', backgroundSize: '100%', minHeight: '1000px' }}>

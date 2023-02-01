@@ -5,14 +5,15 @@ import {
   Button, Form, Col, Input, Label, ModalHeader, ModalBody,
 } from 'reactstrap';
 import { AuthLogin } from '../../../redux/actions/userAction';
+import './authPage.css';
 
 export default function RegModalContent({ toggle }) {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   return (
     <>
-      <ModalHeader toggle={toggle}>Registration</ModalHeader>
-      <ModalBody>
+      <ModalHeader className="authBorder" toggle={toggle}>Registration</ModalHeader>
+      <ModalBody className="authBack">
         <Form onSubmit={(e) => {
           dispatch(AuthLogin(e));
           navigate('/');
@@ -30,6 +31,7 @@ export default function RegModalContent({ toggle }) {
               name="name"
               placeholder="username"
               type="text"
+              className="forInputs"
             />
           </Col>
           <Col>
@@ -44,6 +46,7 @@ export default function RegModalContent({ toggle }) {
               name="email"
               placeholder="email"
               type="text"
+              className="forInputs"
             />
           </Col>
           <Col>
@@ -58,6 +61,7 @@ export default function RegModalContent({ toggle }) {
               name="phone"
               placeholder="phone"
               type="text"
+              className="forInputs"
             />
           </Col>
           <Col>
@@ -72,11 +76,12 @@ export default function RegModalContent({ toggle }) {
               name="password"
               placeholder="password"
               type="password"
+              className="forInputs"
             />
           </Col>
           <Col>
             <Button onClick={toggle} type="submit">
-              Submit
+              Создать
             </Button>
           </Col>
         </Form>

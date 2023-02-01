@@ -13,9 +13,9 @@ export default function OneFavorite({ fav }) {
   function deleter() {
     dispatch(favoriteDeleteAction(fav.id));
   }
-
+  console.log(fav, '000test00');
   return (
-    <div className="card m-3  border border-0 mx-auto" style={{ maxWidth: '500px', marginTop: '20px', boxShadow: '1px 0px 5px grey' }}>
+    <div className="card m-3  border border-0 mx-auto" style={{ maxWidth: '550px', marginTop: '20px', boxShadow: '1px 0px 5px grey' }}>
       <div className="row g-0 ">
         <div className="col-4  m-2" style={{ marginRight: '90px' }}>
           <img src={fav?.Book?.photo} className="img-fluid rounded-start" alt="..." style={{ width: '450px' }} />
@@ -30,21 +30,26 @@ export default function OneFavorite({ fav }) {
           }}
         >
           <div className="card-body mt-0">
-            <h5 className="card-title p-0 m-0 text-center fs-2 pb-4">{fav?.title}</h5>
+            <h5 className="card-title text-center forFavHead" style={{ minWidth: '300px' }}>{fav?.Book?.title}</h5>
             <p className="card-text fs-6">
-              <span className="fw-bold fs-5"> Жанр: </span>
-              {fav?.Book?.Genre?.genre}
+              <span className="fw-bold fs-5 forFavHead"> Жанр: </span>
+              <span className="forFavText">{fav?.Book?.Genre?.genre}</span>
             </p>
             <p className="card-text">
-              <span className="fw-bold fs-5"> Рейтинг: </span>
+              <span className="fw-bold fs-5 forFavHead"> Рейтинг: </span>
               {' '}
-              {fav?.Book?.rating}
+              <br />
+              <span className="forFavText">
+                {fav?.Book?.rating}
+                {' '}
+              </span>
               / 10
 
             </p>
-            <p className="card-text fs-6">
+            <p className="card-text fs-6 forFavHead" style={{ minWidth: '300px' }}>
               <span className="fw-bold fs-5">Aвтор: </span>
-              {fav?.Book?.Author?.name}
+              <br />
+              <span className="forFavText">{fav?.Book?.Author?.name}</span>
             </p>
           </div>
           <div

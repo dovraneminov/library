@@ -1,6 +1,7 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import { cabinetDelete } from '../../../redux/reducers/personalAreaSlice';
+import './oneOrder.css';
 
 export default function OneOrder({ order }) {
   const dispatch = useDispatch();
@@ -19,40 +20,35 @@ export default function OneOrder({ order }) {
         </h5>
         <p className="card-text">
           {' '}
-          <span className="fs-5">Книга: </span>
+          <span className="fs-5 forOrder">Книга: </span>
           {' '}
-          {order?.Book?.title}
-        </p>
-        <p className="card-text">
-          <span className="fs-5">Адрес: </span>
           <br />
-          {order.adress}
+          <span className="forDesc">{order?.Book?.title}</span>
         </p>
         <p className="card-text">
+          <span className="fs-5 forOrder">Адрес: </span>
+          <br />
+          <span className="forDesc">{order.adress}</span>
+        </p>
+        <p className="card-text forOrder">
           <span className="fs-5">Дата получения: </span>
           <br />
-          {order.date.toString().slice(0, -14)}
+          <span className="forDesc">{order.date.toString().slice(0, -14)}</span>
         </p>
-        <p className="card-text">
+        <p className="card-text forOrder">
           <span className="fs-5">Время получения: </span>
           <br />
-          {order.time}
+          <span className="forDesc">{order.time}</span>
         </p>
-        <p className="card-text">
+        <p className="card-text forOrder">
           <span className="fs-5">Сумма заказа: </span>
           <br />
           {' '}
-          {order.price}
+          <span className="forDesc">{order.price}</span>
           {' '}
           руб
         </p>
-        <p className="card-text">
-          Аренда на
-          {' '}
-          {order.days}
-          {' '}
-          дней
-        </p>
+
       </div>
       <button onClick={() => deleter()} type="button" className="btn btn-danger m-2  text-center">Отмена</button>
     </div>

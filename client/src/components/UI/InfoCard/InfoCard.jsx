@@ -5,8 +5,8 @@ import { setAuthor } from '../../../redux/reducers/authorSlice';
 import { booksesAction, setBookses } from '../../../redux/reducers/booksesSlice';
 import { favoriteAddAction } from '../../../redux/reducers/favoriteSlice';
 import { infoAction, setInfo } from '../../../redux/reducers/infoSlice';
-import { addOrder } from '../../../redux/reducers/orderSlice';
-import { plusOrder } from '../../../redux/reducers/priceSlice';
+import { addOrder, nullOrder } from '../../../redux/reducers/orderSlice';
+import { nullMoney, plusOrder } from '../../../redux/reducers/priceSlice';
 import Footer from '../Footer/Footer';
 import InfoCardHeader from '../InfoCardHeader/InfoCardHeader';
 import InfoCardText from '../InfoCardText/InfoCardText';
@@ -31,6 +31,8 @@ export default function InfoCard() {
   }, []);
 
   function openOrder() {
+    dispatch(nullOrder());
+    dispatch(nullMoney());
     dispatch(plusOrder(info.price));
     dispatch(addOrder(info));
     navigate('/order');

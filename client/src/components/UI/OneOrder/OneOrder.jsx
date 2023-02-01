@@ -36,7 +36,7 @@ export default function OneOrder({ order }) {
         <p className="card-text">
           <span className="fs-5">Время получения: </span>
           <br />
-          {order.time}
+          {order.time.toString().slice(0, -3)}
         </p>
         <p className="card-text">
           <span className="fs-5">Сумма заказа: </span>

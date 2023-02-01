@@ -13,7 +13,7 @@ export default function OneFavorite({ fav }) {
   function deleter() {
     dispatch(favoriteDeleteAction(fav.id));
   }
-  console.log(fav, '000test00');
+
   return (
     <div className="card m-3  border border-0 mx-auto" style={{ maxWidth: '550px', marginTop: '20px', boxShadow: '1px 0px 5px grey' }}>
       <div className="row g-0 ">

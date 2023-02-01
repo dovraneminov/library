@@ -7,12 +7,10 @@ import { favoriteAddAction } from '../../../redux/reducers/favoriteSlice';
 import { infoAction, setInfo } from '../../../redux/reducers/infoSlice';
 import { addOrder, nullOrder } from '../../../redux/reducers/orderSlice';
 import { nullMoney, plusOrder } from '../../../redux/reducers/priceSlice';
-import { infoAction } from '../../../redux/reducers/infoSlice';
-import { addOrder } from '../../../redux/reducers/orderSlice';
-import { plusOrder } from '../../../redux/reducers/priceSlice';
 import Footer from '../Footer/Footer';
 import InfoCardHeader from '../InfoCardHeader/InfoCardHeader';
 import InfoCardText from '../InfoCardText/InfoCardText';
+import infoCard from './infoCard.css';
 
 export default function InfoCard() {
   const dispatch = useDispatch();
@@ -43,7 +41,7 @@ export default function InfoCard() {
 
   function openFavorite() {
     dispatch(favoriteAddAction(id));
-    navigate('/favorite');
+    // navigate('/favorite');
   }
 
   console.log(info);
@@ -91,7 +89,7 @@ export default function InfoCard() {
                   rowGap: '20px',
                 }}
               >
-                <button onClick={() => openFavorite()} type="button" className="btn btn-outline-warning">В избранное</button>
+                <button onClick={() => openFavorite()} type="button" className="btn btn-outline-warning" data-bs-toggle="modal" data-bs-target="#exampleModal">В избранное</button>
                 <button onClick={() => navigate(-1)} type="button" className="btn btn-outline-warning">Вернуться назад</button>
                 <button onClick={() => openAuthor()} type="button" className="btn btn-outline-warning">Подробнее об авторе</button>
                 <button onClick={() => openOrder()} type="button" className="btn btn-outline-warning">Арендовать</button>
@@ -100,6 +98,24 @@ export default function InfoCard() {
           </div>
         </div>
       </div>
+
+      <div className="modal fade" id="exampleModal" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div className="modal-dialog">
+          <div className="modal-content">
+            <div className="modal-header">
+              <h1 className="modal-title fs-5" id="exampleModalLabel fontsForText">Library</h1>
+              <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close" />
+            </div>
+            <div className="modal-body text-center fontsForText">
+              Вы добавили книгу в избранное!
+            </div>
+            <div className="modal-footer">
+              <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <InfoCardHeader />
       <InfoCardText />
       <Footer />

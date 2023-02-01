@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@600&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@1,500&display=swap');
 
 .forFavHead{
     font-family: 'Roboto Slab', serif;
@@ -8,4 +9,9 @@
 .forFavText{
     font-family: 'Roboto Slab', serif;
     font-size: 400;
+}
+
+.forFavHeader{
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 500;
 }

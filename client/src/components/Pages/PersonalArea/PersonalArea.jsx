@@ -12,7 +12,6 @@ export default function PersonalArea() {
     dispatch(cabinetAction());
   }, []);
 
-  console.log(cabinet);
   return (
     <>
       <div>

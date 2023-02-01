@@ -31,7 +31,6 @@ export default function Order() {
     navigate('/');
   };
 
-  console.log(inputs);
   return (
     <>
       <div>

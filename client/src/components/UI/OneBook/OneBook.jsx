@@ -11,7 +11,6 @@ export default function OneBook({ book }) {
 
   function openInfo() {
     dispatch(setInfo(book));
-    console.log(book);
     navigate(`/books/info/${book?.id}`);
   }
 

@@ -4,7 +4,6 @@ import {
 } from 'reactstrap';
 
 export default function NewPopularCard({ el }) {
-  console.log(el);
   return (
     <Card
       style={{

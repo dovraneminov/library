@@ -3,7 +3,6 @@ import { NavLink } from 'react-router-dom';
 import './Popular.css';
 
 export default function MyPopular({ el }) {
-  console.log('ELpachoElpachoEl', el);
   return (
     <div className="card mb-3">
       <div className="row g-0">

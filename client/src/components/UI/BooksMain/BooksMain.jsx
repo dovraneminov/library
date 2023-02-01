@@ -9,7 +9,6 @@ export default function BooksMain({ book }) {
 
   function openInfo() {
     dispatch(setInfo(book));
-    console.log(book);
     navigate(`/books/info/${book?.id}`);
   }
   return (

@@ -30,7 +30,23 @@ export default function Mainpage() {
     <>
       <MyList />
       <HeaderMyBook />
-      <MySlide />
+
+      <Link to="/books" className="forLink">
+        Книги
+        <MdArrowForwardIos />
+      </Link>
+      <Carousel>
+
+        {books?.map((el) => (
+          <Carousel.Item>
+            <div className="row mt-3 d-flex justify-content-around">
+              {el?.map((bookses) => (
+                <BooksMain book={bookses} key={bookses.id} />
+              ))}
+            </div>
+          </Carousel.Item>
+        ))}
+      </Carousel>
 
       <Link to="/popular" className="forLink">
 
@@ -44,22 +60,8 @@ export default function Mainpage() {
         ))}
       </div>
 
-      <Link to="/books" className="forLink">
-        Книги
-        <MdArrowForwardIos />
-      </Link>
-      <Carousel>
-      
-        {books?.map((el) => (
-          <Carousel.Item>
-            <div className="row mt-3 d-flex justify-content-around">
-              {el?.map((bookses) => (
-                <BooksMain book={bookses} key={bookses.id} />
-              ))}
-            </div>
-          </Carousel.Item>
-        ))}
-      </Carousel>
+      <MySlide />
+
       <Link className="forLink" to="/publisher">
         Авторы
         <MdArrowForwardIos />

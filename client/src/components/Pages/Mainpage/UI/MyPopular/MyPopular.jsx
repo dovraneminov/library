@@ -4,18 +4,11 @@ import './Popular.css';
 
 export default function MyPopular({ el }) {
   return (
-    <div className="card mb-3">
-      <div className="row g-0">
-        <div className="col-md-4">
-          <NavLink><img src={el.photo} className="card-img-top" alt="adam" /></NavLink>
-        </div>
-        <div className="col-md-8">
-          <div className="card-body">
-            <h5 className="card-title">{el.title}</h5>
-            <p className="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-            <p className="card-text"><small className="text-muted">Last updated 3 mins ago</small></p>
-          </div>
-        </div>
+    <div className="card m-3 border border-0" style={{ width: '18rem', boxShadow: '1px 2px 2px grey' }}>
+      <img src={el.photo} className="card-img-top" alt="..." />
+      <div className="card-body">
+        <h5 className="card-title">{el.title}</h5>
+        <p className="card-text fst-italic">Скоро будет в продаже</p>
       </div>
     </div>
   );

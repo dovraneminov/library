@@ -1,6 +1,7 @@
 import React from 'react';
 import './headerMyBook.css';
 import { FaArrowCircleDown } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 export default function HeaderMyBook() {
   return (
@@ -31,10 +32,10 @@ export default function HeaderMyBook() {
           сервис!
         </div>
 
-        <button type="button" className="promoBtn">Посмотреть книги</button>
+        <Link to="/books" style={{ textDecoration: 'none' }}><button type="button" className="promoBtn">Посмотреть книги</button></Link>
 
         <div className="more">
-          <div className="moreText">узнать больше об личной книге</div>
+          <div className="moreText">узнать больше</div>
           <FaArrowCircleDown className="moreImg" style={{ height: '40px', width: '50px', color: 'white' }} />
         </div>
       </div>

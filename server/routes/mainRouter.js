@@ -69,7 +69,7 @@ router.post('/', async (req, res) => {
 });
 
 router.get('/getpopular', async (req, res) => {
-  const popular = await Popular.findAll();
+  const popular = await Popular.findAll({ include: [Author] });
   res.json(popular);
 });
 

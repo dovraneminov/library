@@ -30,6 +30,18 @@ export default function Mainpage() {
       <MyList />
       <HeaderMyBook />
 
+      <Link to="/popular" className="forLink">
+
+        Популярное
+        <MdArrowForwardIos />
+      </Link>
+
+      <div className="row mt-3 pt-3 d-flex justify-content-around " style={{ backgroundColor: 'rgb(238 236 245)' }}>
+        {popular?.map((el) => (
+          <NewPopularCard key={el.id} el={el} />
+        ))}
+      </div>
+
       <Link to="/books" className="forLink">
         Книги
         <MdArrowForwardIos />
@@ -46,18 +58,6 @@ export default function Mainpage() {
           </Carousel.Item>
         ))}
       </Carousel>
-
-      <Link to="/popular" className="forLink">
-
-        Популярное
-        <MdArrowForwardIos />
-      </Link>
-
-      <div className="row mt-3 pt-3 d-flex justify-content-around " style={{ backgroundColor: 'rgb(238 236 245)' }}>
-        {popular?.map((el) => (
-          <NewPopularCard key={el.id} el={el} />
-        ))}
-      </div>
 
       <MySlide />
 

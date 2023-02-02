@@ -1,0 +1,13 @@
+.forInputs{
+    width: 250px;
+    margin-bottom: 14px;
+}
+
+.authBack{
+    background-color: rgba(245, 245, 245, 1);
+}
+
+.authBorder{
+    background-color: #6c757d;
+    color: aliceblue;
+}

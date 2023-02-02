@@ -4,13 +4,17 @@ import {
 } from 'reactstrap';
 
 export default function NewPopularCard({ el }) {
+  console.log(el, '+++++++');
   return (
     <Card
+      className="border border-0 pt-2"
       style={{
         width: '18rem',
+        backgroundColor: 'rgb(238 236 245)',
       }}
     >
       <img
+        className="rounded"
         alt="Sample"
         src={el.photo}
       />
@@ -22,14 +26,9 @@ export default function NewPopularCard({ el }) {
           className="mb-2 text-muted"
           tag="h6"
         >
-          Card subtitle
+          {el?.Author?.name}
         </CardSubtitle>
-        <CardText>
-          {el.name}
-        </CardText>
-        <Button>
-          Button
-        </Button>
+
       </CardBody>
     </Card>
   );

@@ -95,7 +95,7 @@ export default function MyList() {
             </Card>
           )
       ))}
-      ;
+
     </div>
   );
 }

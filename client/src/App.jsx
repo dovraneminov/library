@@ -25,6 +25,7 @@ import Pay from './components/UI/Pay';
 import Favorite from './components/Pages/Favorite/Favorite';
 import MyScroll from './components/Pages/Mainpage/UI/MyScroll/MyScroll';
 import Mainpage from './components/Pages/Mainpage/Mainpage';
+import Loader from './components/Loader/Loader';
 
 function App() {
   const dispatch = useDispatch();
@@ -58,6 +59,7 @@ function App() {
         <Route path="/publisher/:id" element={<AuthorInfo />} />
         <Route path="/pay" element={<Pay />} />
         <Route path="/favorite" element={<Favorite />} />
+        <Route path="/loader" element={<Loader />} />
       </Routes>
     </>
 

@@ -11,25 +11,22 @@ import { plusOrder } from '../../redux/reducers/priceSlice';
 
 export default function MyList() {
   const books = useSelector((store) => store.input);
-
+  console.log(books);
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const { id } = useParams();
   const info = useSelector((store) => store.info);
   // const order = useSelector((store) => store.order);
-  console.log(info);
+  // console.log(info);
   useEffect(() => {
     dispatch(setInfo());
+    dispatch(infoAction(id));
   }, []);
 
   function openAuthor(book) {
     dispatch(setAuthor(book));
     navigate(`/books/author/${book.Author.id}`);
   }
-
-  useEffect(() => {
-    dispatch(infoAction(id));
-  }, []);
 
   function openOrder(order) {
     dispatch(plusOrder(order.price));

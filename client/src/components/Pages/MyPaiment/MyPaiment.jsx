@@ -16,8 +16,8 @@ export default function MyPaiment() {
   const dispatch = useDispatch();
   const user = useSelector((store) => store.user);
   const clickHandler = () => {
-    dispatch(setMailer(user));
-    navigate('/pay');
+    navigate('/loader');
+    setTimeout(() => dispatch(setMailer(user))(navigate('/pay')), 2000);
   };
 
   return (

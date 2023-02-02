@@ -26,7 +26,7 @@ router.post('/signup', async (req, res) => {
       from: 'Mailer test <test.tester.test@internet.ru>',
       to: req.body.email,
       subject: 'Message from Node js',
-      text: 'This message was sent from Node js server.',
+      text: 'Поздравляем! Вы зарегистрировались на сайте Library!',
     };
     mailer(message);
 

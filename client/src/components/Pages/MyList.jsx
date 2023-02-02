@@ -37,51 +37,57 @@ export default function MyList() {
     navigate('/order');
   }
 
-  return books.map((book) => (
-    book.title
-      ? (
-        <Card
-          style={{
-            width: '18rem',
-          }}
-        >
-          <img
-            alt="Sample"
-            src={book.photo}
-          />
-          <CardBody>
-            <CardTitle tag="h5">
-              {book.title}
-            </CardTitle>
-            <CardText>
-              {book.description}
-            </CardText>
-          </CardBody>
-          <button onClick={() => navigate(-1)} type="button" className="btn btn-outline-warning">В избранное</button>
-          <button onClick={() => navigate(-1)} type="button" className="btn btn-outline-warning">Вернуться назад</button>
-          <button onClick={() => openAuthor(book)} type="button" className="btn btn-outline-warning">Подробнее об авторе</button>
-          <button onClick={() => openOrder(book)} type="button" className="btn btn-outline-warning">Подробнее об авторе</button>
-        </Card>
-      )
-      : (
-        <Card
-          style={{
-            width: '18rem',
-          }}
-        >
-          <img
-            alt="Sample"
-            src={book.photo}
-          />
-          <CardBody>
-            <CardTitle tag="h5">
-              {book.name}
-            </CardTitle>
-            <CardText>
-              {book.description}
-            </CardText>
-          </CardBody>
-          {/* <button onClick={() => navigate(-1)}
+  return (
+    <div className="row" style={{ display: 'flex', justifyContent: 'center' }}>
+      {books.map((book) => (
+        book.title
+          ? (
+            <Card
+              className="botder border-0"
+              style={{
+                width: '18rem',
+                margin: '10px 10px',
+                boxShadow: '1px 2px 2px grey',
+              }}
+            >
+              <img
+                alt="Sample"
+                src={book.photo}
+                className="pt-2"
+              />
+              <CardBody>
+                <CardTitle tag="h5">
+                  {book.title}
+                </CardTitle>
+                <CardText>
+                  {book.description}
+                </CardText>
+              </CardBody>
+              <button onClick={() => navigate(-1)} type="button" className="btn btn-outline-warning">В избранное</button>
+              <button onClick={() => navigate(-1)} type="button" className="btn btn-outline-warning mt-1">Вернуться назад</button>
+              <button onClick={() => openAuthor(book)} type="button" className="btn btn-outline-warning mt-1">Подробнее об авторе</button>
+              <button onClick={() => openOrder(book)} type="button" className="btn btn-outline-warning mt-1 mb-2">Подробнее об авторе</button>
+            </Card>
+          )
+          : (
+            <Card
+              style={{
+                width: '18rem',
+              }}
+            >
+              <img
+                alt="Sample"
+                src={book.photo}
+              />
+              <CardBody>
+                <CardTitle tag="h5">
+                  {book.name}
+                </CardTitle>
+                <CardText>
+                  {book.description}
+                </CardText>
+              </CardBody>
+              {/* <button onClick={() => navigate(-1)}
           type="button" className="btn btn-outline-warning">В избранное</button>
           <button onClick={() => navigate(-1)}
           type="button" className="btn btn-outline-warning">Вернуться назад</button>
@@ -89,7 +95,10 @@ export default function MyList() {
           type="button" className="btn btn-outline-warning">Подробнее об авторе</button>
           <button onClick={() => openOrder()}
           type="button" className="btn btn-outline-warning">Подробнее об авторе</button> */}
-        </Card>
-      )
-  ));
+            </Card>
+          )
+      ))}
+      ;
+    </div>
+  );
 }

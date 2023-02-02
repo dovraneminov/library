@@ -65,7 +65,6 @@ router.post('/', async (req, res) => {
   });
 
   const found = [...foundBook, ...foundAuthor, ...foundPopular, ...foundGenre];
-  // console.log(found, input);
   res.json(found);
 });
 

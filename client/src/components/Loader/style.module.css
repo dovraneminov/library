@@ -1,0 +1,39 @@
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 220px auto;
+    min-width: 60px;
+  }
+  
+  .loader {
+    margin: 0 auto;
+    width: 60px;
+    height: 60px;
+    margin-bottom: 16px;
+    border: 5px solid #282d36;
+    border-radius: 50%;
+    border-left-color: #7254dd;
+    animation: loader 1.3s linear infinite;
+  }
+  
+  @keyframes loader {
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  .loadSpan {
+    /* position: fixed; */
+    /* top: 60%; */
+    margin: 0 auto;
+    font-family: "Gilroy";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    /* identical to box height, or 150% */
+    text-align: center;
+    /* main/white */
+    color: #ffffff;
+  }

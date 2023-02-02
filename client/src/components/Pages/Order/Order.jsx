@@ -12,9 +12,9 @@ export default function Order() {
   const order = useSelector((store) => store.order);
   const prices = useSelector((store) => store.price);
   const user = useSelector((store) => store.user);
-
+  const [money, setMoney] = useState(prices);
   const [inputs, setInputs] = useState({
-    bookId: order[0]?.id, adress: '', date: '', time: '', price: '', days: '',
+    bookId: order[0]?.id, adress: '', date: '', time: '', price: 0, days: 1,
   });
 
   const changeHandler = (e) => {
@@ -22,11 +22,13 @@ export default function Order() {
   };
   // const obj = { ...inputs, price };
   // dispatch(setOrder(obj));
-  const money = (prices * 2 + Number(inputs.days * 20));
+  // const money = (prices + Number(inputs.days * 20));
 
   useEffect(() => {
     setInputs((prev) => ({ ...prev, price: money }));
-  }, [money]);
+    if (inputs.days > 1) setMoney(prices + Number(inputs.days * 20));
+    else setMoney(prices);
+  }, [inputs]);
 
   const submit = () => {
     dispatch(orderAction(inputs));

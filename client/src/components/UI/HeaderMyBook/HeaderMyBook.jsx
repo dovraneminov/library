@@ -31,7 +31,7 @@ export default function HeaderMyBook() {
           сервис!
         </div>
 
-        <button type="button" className="promoBtn">Моя личная Книга</button>
+        <button type="button" className="promoBtn">Посмотреть книги</button>
 
         <div className="more">
           <div className="moreText">узнать больше об личной книге</div>

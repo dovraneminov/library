@@ -39,7 +39,7 @@ export default function Navigation() {
               <Link className="nav-link text-dark" to="/publisher">Авторы</Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link text-dark" to="/mybook">Library</Link>
+              <Link className="nav-link text-dark" to="/main">Library</Link>
             </li>
           </ul>
         )}

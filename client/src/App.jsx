@@ -26,6 +26,7 @@ import Favorite from './components/Pages/Favorite/Favorite';
 import MyScroll from './components/Pages/Mainpage/UI/MyScroll/MyScroll';
 import Mainpage from './components/Pages/Mainpage/Mainpage';
 import Loader from './components/Loader/Loader';
+import PageNotFounded from './components/Pages/PageNotFounded/PageNotFounded';
 
 function App() {
   const dispatch = useDispatch();
@@ -60,6 +61,7 @@ function App() {
         <Route path="/pay" element={<Pay />} />
         <Route path="/favorite" element={<Favorite />} />
         <Route path="/loader" element={<Loader />} />
+        <Route path="*" element={<PageNotFounded />} />
       </Routes>
     </>
 

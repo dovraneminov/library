@@ -53,7 +53,7 @@ export default function Mainpage() {
         <MdArrowForwardIos />
       </Link>
 
-      <div className="row mt-3 d-flex justify-content-around " style={{ backgroundColor: 'rgb(238 236 245)' }}>
+      <div className="row mt-3 pt-3 d-flex justify-content-around " style={{ backgroundColor: 'rgb(238 236 245)' }}>
         {popular?.map((el) => (
           <NewPopularCard key={el.id} el={el} />
         ))}

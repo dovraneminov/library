@@ -6,13 +6,15 @@ export default function Footer() {
     <footer>
       <div className="info">
         <div className="info_links">
-          <a href="/" className="underlined">Служба поддержки</a>
+          <a href="https://github.com/gid2" className="underlined">Служба поддержки</a>
           |
-          <a href="/" className="underlined">Политика конфиденциальности</a>
+          <a href="https://github.com/Shiny469" className="underlined">Политика конфиденциальности</a>
+          |
+          <a href="https://github.com/OlgaPorunova" className="underlined">Реклама</a>
         </div>
         {' '}
         Связаться с
-        <a href="tel:+88005550121" style={{ marginTop: '18px' }}> Library</a>
+        <a href="https://github.com/dovraneminov" style={{ marginTop: '18px' }}> Library</a>
       </div>
     </footer>
   );

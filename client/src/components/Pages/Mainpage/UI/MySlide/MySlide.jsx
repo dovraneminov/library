@@ -7,40 +7,52 @@ export default function MySlide() {
         <div className="carousel-item active">
           <div className="d-flex pt-2 pb-2" style={{ justifyContent: 'space-evenly' }}>
             <div>
-              <a href="https://www.litres.ru/edit-eva-eger/vybor/"><img src="https://cv7.litres.ru/pub/c/cover_max1500/48508375.jpg" className="d-block w-40 h-60 mx-auto rounded" style={{ width: '400px', height: '600px' }} alt="..." /></a>
+              <a href="https://www.litres.ru/edit-eva-eger/vybor/"><img src="https://cv7.litres.ru/pub/c/cover_max1500/48508375.jpg" className="d-block w-40 h-60 mx-auto rounded" style={{ width: '300px', height: '400px' }} alt="..." /></a>
             </div>
             <div>
-              <a href="https://www.litres.ru/book/dar-12-kluchey-k-vnutrennemu-osvobozhdeniu-i-obreteniu-sebya-64499616/"><img src="https://cv1.litres.ru/pub/c/elektronnaya-kniga/cover_max1500/64499616-edit-eva-eger-dar-12-kluchey-k-vnutrennemu-osvobozhdeniu-i-obreteniu-sebya.jpg" className="d-block w-40 h-60 mx-auto rounded" style={{ width: '400px', height: '600px' }} alt="..." /></a>
-            </div>
-          </div>
-        </div>
-        <div className="carousel-item pt-2 pb-2">
-          <div className="d-flex" style={{ justifyContent: 'space-evenly' }}>
-            <div>
-              <a href="https://www.litres.ru/book/sapiens-kratkaya-istoriya-chelovechestva-22150614/"><img src="https://cv1.litres.ru/pub/c/elektronnaya-kniga/cover_max1500/22150614-book-sapiens-kratkaya-istoriya-chelovechestva-22150614.jpg" className="d-block w-40 h-60 mx-auto rounded" style={{ width: '400px', height: '600px' }} alt="..." /></a>
+              <a href="https://elbrusboot.camp/"><img src="https://cv9.litres.ru/pub/c/cover_max1500/10654193.jpg" className="d-block w-40 h-60 mx-auto rounded" style={{ width: '300px', height: '400px' }} alt="..." /></a>
             </div>
             <div>
-              <a href="https://www.litres.ru/uval-noy-harari/homo-deus-kratkaya-istoriya-buduschego/"><img src="https://cv3.litres.ru/pub/c/elektronnaya-kniga/cover_max1500/36300631-uval-noy-harari-homo-deus-kratkaya-istoriya-buduschego.jpg" className="d-block w-40 h-60 mx-auto rounded" style={{ width: '400px', height: '600px' }} alt="..." /></a>
+              <a href="https://www.litres.ru/book/dar-12-kluchey-k-vnutrennemu-osvobozhdeniu-i-obreteniu-sebya-64499616/"><img src="https://cv1.litres.ru/pub/c/elektronnaya-kniga/cover_max1500/64499616-edit-eva-eger-dar-12-kluchey-k-vnutrennemu-osvobozhdeniu-i-obreteniu-sebya.jpg" className="d-block w-40 h-60 mx-auto rounded" style={{ width: '300px', height: '400px' }} alt="..." /></a>
             </div>
           </div>
         </div>
         <div className="carousel-item pt-2 pb-2">
           <div className="d-flex" style={{ justifyContent: 'space-evenly' }}>
             <div>
-              <a href="https://www.litres.ru/book/ne-navredi-istorii-o-zhizni-smerti-i-neyrohirurgii-18506362/"><img src="https://cv6.litres.ru/pub/c/cover_max1500/18506362.jpg" className="d-block w-40 h-60 mx-auto rounded" style={{ width: '400px', height: '600px' }} alt="..." /></a>
+              <a href="https://www.litres.ru/book/sapiens-kratkaya-istoriya-chelovechestva-22150614/"><img src="https://cv1.litres.ru/pub/c/elektronnaya-kniga/cover_max1500/22150614-book-sapiens-kratkaya-istoriya-chelovechestva-22150614.jpg" className="d-block w-40 h-60 mx-auto rounded" style={{ width: '300px', height: '400px' }} alt="..." /></a>
             </div>
             <div>
-              <a href="https://www.litres.ru/book/vtoraya-zhizn-uve-20690188/"><img src="https://cv8.litres.ru/pub/c/elektronnaya-kniga/cover_max1500/20690188-book-vtoraya-zhizn-uve-20690188.jpg" className="d-block w-40 h-60 mx-auto rounded" style={{ width: '400px', height: '600px' }} alt="..." /></a>
+              <a href="https://elbrusboot.camp/"><img src="https://cv9.litres.ru/pub/c/cover_max1500/63028197.jpg" className="d-block w-40 h-60 mx-auto rounded" style={{ width: '300px', height: '400px' }} alt="..." /></a>
+            </div>
+            <div>
+              <a href="https://www.litres.ru/uval-noy-harari/homo-deus-kratkaya-istoriya-buduschego/"><img src="https://cv3.litres.ru/pub/c/elektronnaya-kniga/cover_max1500/36300631-uval-noy-harari-homo-deus-kratkaya-istoriya-buduschego.jpg" className="d-block w-40 h-60 mx-auto rounded" style={{ width: '300px', height: '400px' }} alt="..." /></a>
             </div>
           </div>
         </div>
         <div className="carousel-item pt-2 pb-2">
           <div className="d-flex" style={{ justifyContent: 'space-evenly' }}>
             <div>
-              <a href="https://www.litres.ru/irvin-yalom/lzhec-na-kushetke/"><img src="https://cv8.litres.ru/pub/c/elektronnaya-kniga/cover_max1500/6719381-irvin-yalom-lzhec-na-kushetke.jpg" className="d-block w-40 h-60 mx-auto rounded" style={{ width: '400px', height: '600px' }} alt="..." /></a>
+              <a href="https://www.litres.ru/book/ne-navredi-istorii-o-zhizni-smerti-i-neyrohirurgii-18506362/"><img src="https://cv6.litres.ru/pub/c/cover_max1500/18506362.jpg" className="d-block w-40 h-60 mx-auto rounded" style={{ width: '300px', height: '400px' }} alt="..." /></a>
             </div>
             <div>
-              <a href="https://www.litres.ru/irvin-yalom/kak-ya-stal-soboy-vospominaniya-36080145/"><img src="https://cv5.litres.ru/pub/c/cover_max1500/33165951.jpg" className="d-block w-40 h-60 mx-auto rounded" style={{ width: '400px', height: '600px' }} alt="..." /></a>
+              <a href="https://elbrusboot.camp/"><img src="https://cv8.litres.ru/pub/c/cover_max1500/39158380.jpg" className="d-block w-40 h-60 mx-auto rounded" style={{ width: '300px', height: '400px' }} alt="..." /></a>
+            </div>
+            <div>
+              <a href="https://www.litres.ru/book/vtoraya-zhizn-uve-20690188/"><img src="https://cv8.litres.ru/pub/c/elektronnaya-kniga/cover_max1500/20690188-book-vtoraya-zhizn-uve-20690188.jpg" className="d-block w-40 h-60 mx-auto rounded" style={{ width: '300px', height: '400px' }} alt="..." /></a>
+            </div>
+          </div>
+        </div>
+        <div className="carousel-item pt-2 pb-2">
+          <div className="d-flex" style={{ justifyContent: 'space-evenly' }}>
+            <div>
+              <a href="https://www.litres.ru/irvin-yalom/lzhec-na-kushetke/"><img src="https://cv8.litres.ru/pub/c/elektronnaya-kniga/cover_max1500/6719381-irvin-yalom-lzhec-na-kushetke.jpg" className="d-block w-40 h-60 mx-auto rounded" style={{ width: '300px', height: '400px' }} alt="..." /></a>
+            </div>
+            <div>
+              <a href="https://elbrusboot.camp/"><img src="https://cv2.litres.ru/pub/c/cover_max1500/18394328.jpg" className="d-block w-40 h-60 mx-auto rounded" style={{ width: '300px', height: '400px' }} alt="..." /></a>
+            </div>
+            <div>
+              <a href="https://www.litres.ru/irvin-yalom/kak-ya-stal-soboy-vospominaniya-36080145/"><img src="https://cv5.litres.ru/pub/c/cover_max1500/33165951.jpg" className="d-block w-40 h-60 mx-auto rounded" style={{ width: '300px', height: '400px' }} alt="..." /></a>
             </div>
           </div>
         </div>

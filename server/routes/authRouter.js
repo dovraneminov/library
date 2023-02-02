@@ -23,9 +23,9 @@ router.post('/signup', async (req, res) => {
     const sessionUser = JSON.parse(JSON.stringify(newUser));
     delete sessionUser.password;
     const message = {
-      from: 'Mailer test <test.tester.test@internet.ru>',
+      from: 'Library server <test.tester.test@internet.ru>',
       to: req.body.email,
-      subject: 'Message from Node js',
+      subject: 'Успешная регистрация',
       text: 'Поздравляем! Вы зарегистрировались на сайте Library!',
     };
     mailer(message);

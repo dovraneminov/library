@@ -5,9 +5,10 @@ import {
   Card, CardBody, CardText, CardTitle,
 } from 'reactstrap';
 import { setAuthor } from '../../redux/reducers/authorSlice';
+import { favoriteAddAction } from '../../redux/reducers/favoriteSlice';
 import { infoAction, setInfo } from '../../redux/reducers/infoSlice';
-import { addOrder } from '../../redux/reducers/orderSlice';
-import { plusOrder } from '../../redux/reducers/priceSlice';
+import { addOrder, nullOrder } from '../../redux/reducers/orderSlice';
+import { nullMoney, plusOrder } from '../../redux/reducers/priceSlice';
 
 export default function MyList() {
   const books = useSelector((store) => store.input);
@@ -29,9 +30,16 @@ export default function MyList() {
   }
 
   function openOrder(order) {
+    dispatch(nullOrder());
+    dispatch(nullMoney());
     dispatch(plusOrder(order.price));
     dispatch(addOrder(order));
     navigate('/order');
+  }
+
+  function openFavorite(book) {
+    dispatch(favoriteAddAction(book.id));
+    // navigate('/favorite');
   }
 
   return (
@@ -60,10 +68,9 @@ export default function MyList() {
                   {book.description}
                 </CardText>
               </CardBody>
-              <button onClick={() => navigate(-1)} type="button" className="btn btn-outline-warning">В избранное</button>
-              <button onClick={() => navigate(-1)} type="button" className="btn btn-outline-warning mt-1">Вернуться назад</button>
+              <button onClick={() => openFavorite(book)} type="button" className="btn btn-outline-warning" data-bs-toggle="modal" data-bs-target="#exampleModal">В избранное</button>
               <button onClick={() => openAuthor(book)} type="button" className="btn btn-outline-warning mt-1">Подробнее об авторе</button>
-              <button onClick={() => openOrder(book)} type="button" className="btn btn-outline-warning mt-1 mb-2">Подробнее об авторе</button>
+              <button onClick={() => openOrder(book)} type="button" className="btn btn-outline-warning mt-1 mb-2">Арендовать</button>
             </Card>
           )
           : (
@@ -84,14 +91,22 @@ export default function MyList() {
                   {book.description}
                 </CardText>
               </CardBody>
-              {/* <button onClick={() => navigate(-1)}
-          type="button" className="btn btn-outline-warning">В избранное</button>
-          <button onClick={() => navigate(-1)}
-          type="button" className="btn btn-outline-warning">Вернуться назад</button>
-          <button onClick={() => openAuthor()}
-          type="button" className="btn btn-outline-warning">Подробнее об авторе</button>
-          <button onClick={() => openOrder()}
-          type="button" className="btn btn-outline-warning">Подробнее об авторе</button> */}
+              <div className="modal fade" id="exampleModal" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div className="modal-dialog">
+                  <div className="modal-content">
+                    <div className="modal-header">
+                      <h1 className="modal-title fs-5" id="exampleModalLabel fontsForText">Library</h1>
+                      <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close" />
+                    </div>
+                    <div className="modal-body text-center fontsForText">
+                      Вы добавили книгу в избранное!
+                    </div>
+                    <div className="modal-footer">
+                      <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </Card>
           )
       ))}

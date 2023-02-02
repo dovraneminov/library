@@ -11,13 +11,15 @@ export default function Popular() {
   const popular = useSelector((store) => store.persons);
   return (
     <>
-      <div className="d-flex justify-content-evenly" style={{ backgroundColor: 'rgb(238 236 245)' }}>
-        {' '}
-        {popular?.map((el) => (
-          <div className="d-flex justify-content-evenly">
-            <MyPopular key={el.id} el={el} />
-          </div>
-        ))}
+      <div style={{ height: '1000px', backgroundColor: 'rgb(238 236 245)' }}>
+        <div className="d-flex justify-content-evenly" style={{ backgroundColor: 'rgb(238 236 245)' }}>
+          {' '}
+          {popular?.map((el) => (
+            <div className="d-flex justify-content-evenly">
+              <MyPopular key={el.id} el={el} />
+            </div>
+          ))}
+        </div>
       </div>
       <Footer />
     </>

@@ -1,27 +1,40 @@
 const express = require('express');
 const bcrypt = require('bcrypt');
 const { User } = require('../db/models');
+const mailer = require('../nodemailer');
 
 const router = express.Router();
 
 router.post('/signup', async (req, res) => {
-  const { name, email, password } = req.body;
-  console.log(req.body, '=======++++++++++==================');
-  if (!name || !email || !password) return res.status(400).json({ message: 'Необходимо заполнить все поля' });
+  const {
+    name, email, phone, password,
+  } = req.body;
+  if (!name || !email || !phone || !password) return res.status(400).json({ message: 'Необходимо заполнить все поля' });
   const hash = await bcrypt.hash(password, 7);
 
   try {
     const [newUser, isExist] = await User.findOrCreate({
       where: { email },
-      defaults: { name, email, password: hash },
+      defaults: {
+        name, email, phone, password: hash,
+      },
     });
     if (!isExist) return res.status(401).json({ message: 'Пользователь уже существует' });
     const sessionUser = JSON.parse(JSON.stringify(newUser));
     delete sessionUser.password;
+    const message = {
+      from: 'Library server <test.tester.test@internet.ru>',
+      to: req.body.email,
+      subject: 'Успешная регистрация',
+      text: 'Поздравляем! Вы зарегистрировались на сайте Library!',
+    };
+    mailer(message);
+
     req.session.user = sessionUser;
-    res.json(sessionUser);
+    return res.json(sessionUser);
   } catch (err) {
     console.log(err);
+    return res.sendStatus(400);
   }
 });
 
@@ -35,12 +48,20 @@ router.post('/login', async (req, res) => {
     if (compare) {
       const sessionUser = JSON.parse(JSON.stringify(userInDb));
       delete sessionUser.password;
+      // const message = {
+      //   from: 'Mailer test <test.tester.test@internet.ru>',
+      //   to: req.body.email,
+      //   subject: 'Message from Node js',
+      //   text: 'You are authorizing.',
+      // };
+      // mailer(message);
       req.session.user = sessionUser;
       return res.json(sessionUser);
     }
-    res.status(400).json({ message: 'Неправильный пароль' });
+    return res.status(400).json({ message: 'Неправильный пароль' });
   } catch (err) {
     console.log(err);
+    return res.sendStatus(400);
   }
 });
 
